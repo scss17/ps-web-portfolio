@@ -1,0 +1,88 @@
+
+/* ===================== */
+/* === INITIAL SETUP === */
+/* ===================== */
+
+/* Color Palette */
+:root {
+	--floral-white: #fffcf2;
+	--timberwolf: #ccc5b9;
+	--black-olive: #403d39;
+	--eerie-black: #252422;
+	--flame: #eb5e28; 
+}
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Background + layout */
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: linear-gradient(135deg, var(--eerie-black), var(--black-olive));
+	color: var(--floral-white);
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* ================ */
+/* === HERO SECTION */
+/* ================ */
+
+.comming-soon {
+	text-align: center;
+	max-width: 500px;
+	padding: 20px;
+	animation: fadeIn 1.4s ease-in-out;
+}
+
+/* Circle with initials */
+.brand-circle {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	border: 2px solid var(--flame);
+	color: var(--flame);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 25px auto;
+	font-size: 2.5rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	backdrop-filter: blur(3px);
+}
+
+/* Headline */
+.coming-soon h1 {
+	font-size: 3rem;
+	margin-bottom: 15px;
+	font-weight: 700;
+	color: var(--floral-white);
+}
+
+/* Paragraph */
+.coming-soon p {
+	font-size: 1.1rem;
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--timberwolf);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
