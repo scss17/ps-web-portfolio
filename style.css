@@ -20,19 +20,25 @@
 }
 
 /* Background + layout */
-body {
+html, body {
 	font-family: 'Montserrat', sans-serif;
-	background: linear-gradient(135deg, var(--eerie-black), var(--black-olive));
+	background-color: var(--black-olive);
 	color: var(--floral-white);
 	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	width: 100%;
 }
 
-/* ================ */
-/* === HERO SECTION */
-/* ================ */
+/* =====================*/
+/* === TEXT ELEMENTS ===*/
+/* ==================== */
+.bg-flame {
+	color: var(--flame);
+}
+
+
+/* ==================== */
+/* === HERO SECTION === */
+/* ==================== */
 
 .comming-soon {
 	text-align: center;
