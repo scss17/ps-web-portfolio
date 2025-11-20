@@ -11,8 +11,13 @@
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@500&display=swap"
+		rel="stylesheet">
 
 	<!-- Icon Library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
 	<!-- Custom Stylesheet -->
 	<link rel="stylesheet" href="style.css">
@@ -21,17 +26,18 @@
 <body>
 
 	<!-- NAVIGATION BAR -->
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 
 			<!-- BRAND -->
 			<a class="navbar-brand" href="#index.html">
-				<img src="/img/ps-branding.png" alt="log" height="40px" class="d-inline-block align-text-center me-2">
+				<img src="/img/ps-branding.png" alt="Pablo Campos Logo" height="40px"
+					class="d-inline-block align-text-center me-2">
 				<span class="fw-bold text-secondary">Pablo</span>
-				<span class="bg-flame">Campos</span>
+				<span id="bg-flame">Campos</span>
 			</a>
 
-			<!-- TOGGLE  BUTTON -->
+			<!-- TOGGLE BUTTON -->
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -55,6 +61,55 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- HERO SECTION -->
+	<section class="hero">
+		<div class="container-fluid container-lg py-5">
+			<div class="row justify-content-center">
+				<div
+					class="col-11 col-md-8 col-lg-6 text-center text-md-start d-flex flex-column justify-content-center">
+					<div class="hero--info mb-4">
+						<div class="hero--title-container mb-4">
+							<h1 class="display-1 title">HI THERE <span id="bg-flame"
+									class="display-1 fw-bold m-0 p-0">!</span></h1>
+							<h4>My name is Pablo <span id="bg-flame">Campos</span></h4>
+
+						</div>
+						<!-- PORTRAIT IMAGE FOR SMALL SCREENS -->
+						<div class="d-lg-none mb-4">
+							<img src="img/profile-ima01.png" alt="Pablo Campos Portrait" class="img-fluid">
+						</div>
+
+						<p class="lead"><strong>Industrial Engineer</strong> turned <strong>Data Specialist</strong>. I
+							combine
+							<strong>Lean Six
+								Sigma methodology</strong>
+							with <strong>Full-Stack Data Analysis</strong> to optimize processes and drive
+							decision-making. Skilled in
+							Python, R, SQL, and Visualization, with a talent for explaining complex data to
+							non-technical
+							audiences.
+						</p>
+					</div>
+
+					<!-- SOCIAL MEDIA ICONS-->
+					<div class="social-media-icons container text-center text-md-start mb-4"></div>
+
+					<!-- CALL TO ACTION BUTTONS -->
+					<div class="hero--call-to-action d-grid gap-3 d-md-flex justify-content-md-start">
+						<a class="btn btn-primary btn-lg btn-block" href="resume.html" role="button">Preview Resume</a>
+						<a class="btn btn-outline-primary btn-lg btn-block" href="#contact" role="button">Get in
+							Touch!</a>
+					</div>
+				</div>
+
+				<!-- PORTRAIT IMAGE FOR LARGE SCREENS -->
+				<div class="d-none d-lg-block col-lg-5">
+					<img src="img/profile-ima01.png" alt="Pablo Campos Portrait" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Boostrap Script-->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

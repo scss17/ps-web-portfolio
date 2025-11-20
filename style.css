@@ -5,12 +5,25 @@
 
 /* Color Palette */
 :root {
+	/* Neutral Colors */
 	--floral-white: #fffcf2;
 	--timberwolf: #ccc5b9;
 	--black-olive: #403d39;
 	--eerie-black: #252422;
 	--flame: #eb5e28; 
+
+	/* Media Colors */
+	--linkedin-blue: #0A66C2;
+	--github-black: #171515;
+	--kaggle-blue: #20BEFF;
+	--medium-green: #00ab6c;
+	--upwork-green: #1A8917;
+	--superprof-red: #FF7F50;
 }
+
+/* Custom Fonts */
+.title { font-family: 'Ubuntu', sans-serif; }
+.subtitle { font-family: 'Roboto', sans-serif; }
 
 /* Reset */
 * {
@@ -22,8 +35,6 @@
 /* Background + layout */
 html, body {
 	font-family: 'Montserrat', sans-serif;
-	background-color: var(--black-olive);
-	color: var(--floral-white);
 	height: 100vh;
 	width: 100%;
 }
@@ -31,64 +42,117 @@ html, body {
 /* =====================*/
 /* === TEXT ELEMENTS ===*/
 /* ==================== */
-.bg-flame {
+#bg-flame {
 	color: var(--flame);
 }
 
+/* =======================*/
+/* === BUTTON ELEMENTS ===*/
+/* =======================*/
+
+/* Primary button */
+.btn-primary {
+	--bs-btn-color: var(--floral-white);
+	--bs-btn-bg: var(--flame);
+	--bs-btn-border-color: var(--flame);
+	--bs-btn-hover-color: var(--floral-white);
+	--bs-btn-hover-bg: var(--flame);
+	--bs-btn-hover-border-color: var(--flame);
+	--bs-btn-focus-shadow-rgb: 49,132,253;
+	--bs-btn-active-color: var(--floral-white);
+	--bs-btn-active-bg: var(--flame);
+	--bs-btn-active-border-color: var(--flame);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--floral-white);
+	--bs-btn-disabled-bg: var(--flame);
+	--bs-btn-disabled-border-color: var(--flame);
+}
+
+/* Outline button */
+.btn-outline-primary {
+	--bs-btn-color: var(--flame);
+	--bs-btn-border-color: var(--flame);
+	--bs-btn-hover-color: var(--floral-white);
+	--bs-btn-hover-bg: var(--flame);
+	--bs-btn-hover-border-color: var(--flame);
+	--bs-btn-focus-shadow-rgb: 13,110,253;
+	--bs-btn-active-color: var(--floral-white);
+	--bs-btn-active-bg: var(--flame);
+	--bs-btn-active-border-color: var(--flame);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--flame);
+	--bs-btn-disabled-bg: transparent;
+	--bs-btn-disabled-border-color: var(--flame);
+	--bs-gradient: none;
+}
 
 /* ==================== */
 /* === HERO SECTION === */
 /* ==================== */
 
-.comming-soon {
-	text-align: center;
-	max-width: 500px;
-	padding: 20px;
-	animation: fadeIn 1.4s ease-in-out;
+section.hero {
+	min-height: 100vh;
+	
+	/* Background Properties */
+	background-image: url("img/hero-background01.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	color: floralwhite;
 }
 
-/* Circle with initials */
-.brand-circle {
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.08);
-	border: 2px solid var(--flame);
-	color: var(--flame);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 auto 25px auto;
-	font-size: 2.5rem;
-	font-weight: 700;
-	letter-spacing: 2px;
-	backdrop-filter: blur(3px);
+/* Hero Image */
+section.hero img {
+	border-radius: 35%;
 }
 
-/* Headline */
-.coming-soon h1 {
-	font-size: 3rem;
-	margin-bottom: 15px;
-	font-weight: 700;
-	color: var(--floral-white);
+/* Custom sizing for the social media buttons */
+.social-media-icons .btn-lg {
+    width: 3rem;  
+    height: 3rem;
+    padding: 0;   
+    line-height: 3rem; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-/* Paragraph */
-.coming-soon p {
-	font-size: 1.1rem;
-	font-weight: 300;
-	line-height: 1.6;
-	color: var(--timberwolf);
+/* Social media buttons */
+.social-media-icons .btn-outline-dark {
+    background-color: var(--floral-white);
+    border-color: var(--floral-white);
+    color: var(--black-olive);
+    transition: 0.3s;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+.btn-outline-dark:hover {
+    color: floralwhite;
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+/* Define the brand colors */
+.social-icon-github:hover {
+    --brand-color: var(--github-black);
+}
+
+.social-icon-linkedin:hover {
+    --brand-color: var(--linkedin-blue); 
+}
+
+.social-icon-kaggle:hover {
+    --brand-color: var(--kaggle-blue); 
+}
+
+.social-icon-upwork:hover {
+    --brand-color: var(--upwork-green); 
+}
+
+.social-icon-medium:hover {
+	--brand-color: var(--medium-green); 
+}
+
+.social-icon-superprof:hover {
+	--brand-color: var(--superprof-red);
 }
