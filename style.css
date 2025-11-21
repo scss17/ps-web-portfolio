@@ -86,6 +86,16 @@ html, body {
 	--bs-gradient: none;
 }
 
+.card-link {
+	text-decoration: none;
+	color: var(--flame);
+	font-weight: 600;
+}
+
+a {
+	color: var(--flame)
+}
+
 /* ==================== */
 /* === HERO SECTION === */
 /* ==================== */
@@ -157,6 +167,13 @@ section.hero img {
 	--brand-color: var(--superprof-red);
 }
 
+/* ========================== */
+/* === EXPERIENCE SECTION === */
+/* ========================== */
+section.experience {
+	background-color: var(--timberwolf);
+}
+
 /* ======================== */
 /* === ABOUT ME SECTION === */
 /* ======================== */
@@ -164,4 +181,29 @@ section.hero img {
 /* About me Image */
 section.about-me img {
 	border-radius: 35%;
+}
+
+/* ======================== */
+/* === CARD HOVER EFFECT ===*/
+/* ======================== */
+
+.card {
+    /* Step 1: Set up the transition for smoothness */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    /* Optional: Set a subtle default shadow to match the Bootstrap feel */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card:hover {
+    /* Step 2: The Lift (Box Shadow) */
+    /* Lifts the card by giving it a larger, more prominent shadow */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    
+    /* Step 3: The Subtle Scale (Transform) */
+    /* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
+    transform: translateY(-5px) scale(1.01);
+    
+    /* Ensure the content is clickable and fully visible on hover */
+    z-index: 10;
 }

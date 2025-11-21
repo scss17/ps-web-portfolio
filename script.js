@@ -4,33 +4,233 @@
 //=================
 
 const socialMedia = [
-    {'name': 'linkedin', 'url': 'https://www.linkedin.com/in/ps-campos', 'iconClass': 'fab fa-linkedin'},
-    {'name': 'github', 'url': 'https://github.com/scss17', 'iconClass': 'fab fa-github'},
-    {'name': 'kaggle', 'url': 'https://www.kaggle.com/scss17', 'iconClass': 'fab fa-kaggle'},
-    {'name': 'medium', 'url': 'https://medium.com/@pscampos/', 'iconClass': 'fab fa-medium'}, 
-    {'name': 'upwork', 'url': 'https://www.upwork.com/freelancers/~014a7e0cab666bf715', 'iconClass': 'fa-brands fa-square-upwork'},
-	{'name': 'superprof', 'url': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html', 'iconClass': 'fa-solid fa-link'}
+	{ 'name': 'linkedin', 'url': 'https://www.linkedin.com/in/ps-campos', 'iconClass': 'fab fa-linkedin' },
+	{ 'name': 'github', 'url': 'https://github.com/scss17', 'iconClass': 'fab fa-github' },
+	{ 'name': 'kaggle', 'url': 'https://www.kaggle.com/scss17', 'iconClass': 'fab fa-kaggle' },
+	{ 'name': 'medium', 'url': 'https://medium.com/@pscampos/', 'iconClass': 'fab fa-medium' },
+	{ 'name': 'upwork', 'url': 'https://www.upwork.com/freelancers/~014a7e0cab666bf715', 'iconClass': 'fa-brands fa-square-upwork' },
+	{ 'name': 'superprof', 'url': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html', 'iconClass': 'fa-solid fa-link' }
 ];
 
 const softSkills = [
-	{'title': 'Industrial Engineer and Data Science Enthusiast', 'links' : [{'text':'Check out my Notebooks', 'link':'https://www.kaggle.com/scss17/code'}], 'text': ["I studied Industrial Engineering, where statistics captivated my interest from the start. In those earlier days, data science was a relatively unexplored topic in my country, and my toolkit was modest, primarily comprising Microsoft Excel and Minitab for daily tasks. When the pandemic hit routines, it gave me an opportunity to pause and contemplate my future pursuits.", "During this reflective period, I decided to take charge of my trajectory and start a self-taught journey into data science. Through books, online courses, and various resources, I discovered the potential within the tech field. Soon I realized that programming was an indispensable skill in our increasingly demanding and rapidly evolving professional landscape."]},
-	{'title': 'Bookworm and a Casual Writer', 'links' : [{'text': 'Visit my Blog', 'link': 'https://medium.com/@pscampos.ortiz'}], 'text': ["One of my greatest joys in life is reading. From fiction to science books, I find inspiration to explore new perspectives and gain a deeper understanding of life.", "If I remember correctly, I started writing when I was 18 years old. I always considered myself introspective, so writing has helped me better assimilate reality and channel emotions hard to cope with, as well as awaken my creative side.", "I have produced some interesting results, and I even decided to start a blog with my poems and short stories. Unfortunately, I have only written in Spanish so far, but if you are curious, feel free to explore my blog."]},
-	{'title': 'Dedicated Volunteer Educator with a Passion for Teaching', 'links' : [], 'text': ["During my time at the university, I volunteered as an educator, teaching a variety of subjects, including computer science, Excel, music, English, and French. This experience proved to be extremely rewarding, bringing a profound sense of purpose to my life. Since then, I have developed a passion for teaching and sharing my knowledge with others.", "I dedicate my spare time to being an online instructor. This not only allows me to pursue my passion for teaching but also serves as a rewarding way to generate a secondary income."]},
-	{'title': 'An Amateur Musician and occasional Dancer', 'links' : [{'text': 'Enroll to my Course', 'link':''}], 'text': ['Music has always held a special place in my heart. I have been playing the guitar for about 14 years now. During my high school days, I even had a band with my friends. We were surprisingly good, and we even performed in a local restaurant for a couple of memorable months.', "Interestingly, dancing wasn't initially my forte. Back in the day, I avoided it, believing I lacked the skill and grace. However, curiosity got the better of me, and I enrolled in Latin dance classes. To my surprise, I discovered a newfound passion, and I attended those classes for three consecutive years. Dancing is now an integral part of who I am."]},
-]
+	{ 'title': 'Industrial Engineer and Data Science Enthusiast', 'links': [{ 'text': 'Check out my Notebooks', 'link': 'https://www.kaggle.com/scss17/code' }], 'text': ["I studied Industrial Engineering, where statistics captivated my interest from the start. In those earlier days, data science was a relatively unexplored topic in my country, and my toolkit was modest, primarily comprising Microsoft Excel and Minitab for daily tasks. When the pandemic hit routines, it gave me an opportunity to pause and contemplate my future pursuits.", "During this reflective period, I decided to take charge of my trajectory and start a self-taught journey into data science. Through books, online courses, and various resources, I discovered the potential within the tech field. Soon I realized that programming was an indispensable skill in our increasingly demanding and rapidly evolving professional landscape."] },
+	{ 'title': 'Bookworm and a Casual Writer', 'links': [{ 'text': 'Visit my Blog', 'link': 'https://medium.com/@pscampos.ortiz' }], 'text': ["One of my greatest joys in life is reading. From fiction to science books, I find inspiration to explore new perspectives and gain a deeper understanding of life.", "If I remember correctly, I started writing when I was 18 years old. I always considered myself introspective, so writing has helped me better assimilate reality and channel emotions hard to cope with, as well as awaken my creative side.", "I have produced some interesting results, and I even decided to start a blog with my poems and short stories. Unfortunately, I have only written in Spanish so far, but if you are curious, feel free to explore my blog."] },
+	{ 'title': 'Dedicated Volunteer Educator with a Passion for Teaching', 'links': [], 'text': ["During my time at the university, I volunteered as an educator, teaching a variety of subjects, including computer science, Excel, music, English, and French. This experience proved to be extremely rewarding, bringing a profound sense of purpose to my life. Since then, I have developed a passion for teaching and sharing my knowledge with others.", "I dedicate my spare time to being an online instructor. This not only allows me to pursue my passion for teaching but also serves as a rewarding way to generate a secondary income."] },
+	{ 'title': 'An Amateur Musician and occasional Dancer', 'links': [{ 'text': 'Enroll to my Course', 'link': '' }], 'text': ['Music has always held a special place in my heart. I have been playing the guitar for about 14 years now. During my high school days, I even had a band with my friends. We were surprisingly good, and we even performed in a local restaurant for a couple of memorable months.', "Interestingly, dancing wasn't initially my forte. Back in the day, I avoided it, believing I lacked the skill and grace. However, curiosity got the better of me, and I enrolled in Latin dance classes. To my surprise, I discovered a newfound passion, and I attended those classes for three consecutive years. Dancing is now an integral part of who I am."] },
+];
+
+const education = [
+	{
+		'title': 'Education',
+		'icons': ['fa-solid', 'fa-school'],
+		'institutions': [
+			{
+				'program': 'Information and Computer Systems Diploma (ICS)',
+				'dates': 'September 2023 – August 2025',
+				'location': 'Camosun College – Victoria, BC',
+				'link': 'https://camosun.ca/programs-courses/find-program/information-and-computer-systems-technologist-diploma',
+			},
+			{
+				'program': 'B.S. in Industrial Engineering with minor in Systems Engineering',
+				'dates': 'January 2014 – May 2019',
+				'location': 'Tecnológico de Monterrey – Chihuahua, Mexico',
+				'link': 'https://tec.mx/en/innovation-and-transformation/bs-in-industrial-engineering'
+			}
+		]
+	}
+];
+
+const certifications = [
+	{
+		'title': 'Certifications',
+		'icons': ['fa-solid', 'fa-certificate'],
+		'certifications': [
+			{
+				'title': 'Data Science Professional Certificate (V2)',
+				'issuer': 'IBM via Coursera',
+				'dates': 'May 2023',
+				'description': 'Proficiency in data science, including data analysis, Python, and machine learning.',
+				'links': [
+					{ 'text': 'Certificate Overview', 'link': 'https://www.coursera.org/professional-certificates/ibm-data-science' },
+					{ 'text': 'View Credential', 'link': 'https://www.coursera.org/account/accomplishments/professional-cert/SHEG54YL25F2?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof' },
+				],
+			},
+			{
+				'title': 'Google Data Analytics',
+				'issuer': 'Google via Coursera',
+				'dates': 'Mar 2023',
+				'description': 'Google Data Analytics Certificate holders complete eight hands-on courses, preparing for entry-level roles. Proficient in tools like spreadsheets, SQL, Tableau, and R, they excel in data preparation, analysis, and sharing for informed decision-making.',
+				'links': [
+					{ 'text': 'Certificate Overview', 'link': 'https://www.coursera.org/professional-certificates/google-data-analytics' },
+					{ 'text': 'View Credential', 'link': 'https://www.coursera.org/account/accomplishments/professional-cert/6JWQ2ATHZ8CN?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof' },
+				],
+			},
+			{
+				'title': 'Data Analysis with R',
+				'issuer': 'Duke University via Coursera',
+				'dates': 'Feb 2023',
+				'description': 'In this program, students become skilled in using R for data analysis and crafting reproducible reports. They understand statistical inference informed decision-making.',
+				'links': [
+					{ 'text': 'Certificate Overview', 'link': 'https://www.coursera.org/specializations/statistics' },
+					{ 'text': 'View Credential', 'link': 'https://www.coursera.org/account/accomplishments/specialization/2BUVF53KYE8V?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n' },
+				],
+			},
+		]
+	}
+];
 
 // HTML elements
 const socialMediaContainer = document.querySelector('.social-media-icons');
 const accordionSoftSkills = document.getElementById('accordionSoftSkills');
 
+const educationContainer = document.querySelector('.education-container');
+const certificationContainer = document.querySelector('.certification-container');
+
 //=================
 //=== FUNCTIONS ===
 //=================
 
+const displayCertificationContent = (experience) => {
+	experience.forEach(category => {
+		// Create the main header
+		const h3 = document.createElement('h3');
+		h3.classList.add('mb-3', 'ms-4');
+
+		// Create the icon
+		const iconSpan = document.createElement('span');
+		const icon = document.createElement('i');
+		icon.classList.add(...category.icons);
+
+		// Append elements
+		iconSpan.appendChild(icon);
+		h3.appendChild(iconSpan);
+		h3.append(` ${category.title}`);
+
+		certificationContainer.appendChild(h3);
+
+		category.certifications.forEach(certification => {
+
+			const cardDiv = document.createElement('div');
+			cardDiv.classList.add('card', 'rounded-5', 'mb-4');
+
+			const cardBody = document.createElement('div');
+			cardBody.classList.add('card-body');
+
+			const cardTitle = document.createElement('h5');
+			cardTitle.classList.add('card-title', 'fw-bold');
+			cardTitle.textContent = certification.title;
+
+			const detailsDiv = document.createElement('div');
+			detailsDiv.classList.add('ps-2', 'mt-2');
+
+			const datesH6 = document.createElement('h6');
+			datesH6.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+
+			const datesIconSpan = document.createElement('span');
+			const datesIcon = document.createElement('i');
+			datesIcon.classList.add('fa-regular', 'fa-calendar');
+
+			datesIconSpan.appendChild(datesIcon);
+			datesH6.appendChild(datesIconSpan);
+			datesH6.append(` ${certification.dates}`);
+
+			const descriptionP = document.createElement('p');
+			descriptionP.classList.add('card-text');
+			descriptionP.textContent = certification.description;
+
+			detailsDiv.appendChild(datesH6);
+			detailsDiv.appendChild(descriptionP);
+
+			certification.links.forEach(link => {
+				const linkA = document.createElement('a');
+				linkA.href = link.link;
+				linkA.classList.add('card-link');
+				linkA.textContent = link.text;
+				linkA.target = '_blank';
+
+				detailsDiv.appendChild(linkA);
+			});
+
+			cardBody.appendChild(cardTitle);
+			cardBody.appendChild(detailsDiv);
+			cardDiv.appendChild(cardBody);
+			certificationContainer.appendChild(cardDiv);
+		});
+	});
+};
+
+const displayEducationContent = (experience) => {
+	experience.forEach(category => {
+		// Create the main header
+		const h3 = document.createElement('h3');
+		h3.classList.add('mb-3', 'ms-4');
+
+		// Create the icon
+		const iconSpan = document.createElement('span');
+		const icon = document.createElement('i');
+		icon.classList.add(...category.icons);
+
+		// Append elements
+		iconSpan.appendChild(icon);
+		h3.appendChild(iconSpan);
+		h3.append(` ${category.title}`);
+
+		educationContainer.appendChild(h3);
+
+		category.institutions.forEach(institution => {
+
+			const cardDiv = document.createElement('div');
+			cardDiv.classList.add('card', 'rounded-5', 'mb-4');
+
+			const cardBody = document.createElement('div');
+			cardBody.classList.add('card-body');
+
+			const cardTitle = document.createElement('h5');
+			cardTitle.classList.add('card-title', 'fw-bold');
+			cardTitle.textContent = institution.program;
+
+			const detailsDiv = document.createElement('div');
+			detailsDiv.classList.add('ps-2', 'mt-2');
+
+			const datesH6 = document.createElement('h6');
+			datesH6.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+
+			const datesIconSpan = document.createElement('span');
+			const datesIcon = document.createElement('i');
+			datesIcon.classList.add('fa-regular', 'fa-calendar');
+
+			datesIconSpan.appendChild(datesIcon);
+			datesH6.appendChild(datesIconSpan);
+			datesH6.append(` ${institution.dates}`);
+
+			const locationP = document.createElement('p');
+			locationP.classList.add('card-text');
+			locationP.textContent = institution.location;
+
+			const linkA = document.createElement('a');
+			linkA.href = institution.link;
+			linkA.classList.add('card-link');
+			linkA.textContent = 'Program Overview';
+			linkA.target = '_blank';
+
+			detailsDiv.appendChild(datesH6);
+			detailsDiv.appendChild(locationP);
+			detailsDiv.appendChild(linkA);
+
+			cardBody.appendChild(cardTitle);
+			cardBody.appendChild(detailsDiv);
+
+			cardDiv.appendChild(cardBody);
+
+			educationContainer.appendChild(cardDiv);
+		});
+	});
+}
+
 const displaySocialMediaButtons = (socialMedia) => {
 	// Define base classes for the social media button
 	const baseClasses = ["btn", "btn-lg", "btn-outline-dark", "me-3", "mb-2", "rounded-circle"];
-	
+
 	socialMedia.forEach(element => {
 		// Create the anchor element
 		const anchor = document.createElement('a');
@@ -42,14 +242,15 @@ const displaySocialMediaButtons = (socialMedia) => {
 
 		// Create the icon element
 		const icon = document.createElement("i");
-        const iconClasses = element.iconClass.split(" "); 
-        icon.classList.add(...iconClasses);
+		const iconClasses = element.iconClass.split(" ");
+		icon.classList.add(...iconClasses);
 
-        // Append elements
-        anchor.appendChild(icon);
-        socialMediaContainer.appendChild(anchor);
+		// Append elements
+		anchor.appendChild(icon);
+		socialMediaContainer.appendChild(anchor);
 	});
 };
+
 
 const displayAccordionContent = (softSkills) => {
 
@@ -92,8 +293,8 @@ const displayAccordionContent = (softSkills) => {
 		accCollapseDiv.setAttribute('id', targetId);
 		accCollapseDiv.classList.add('accordion-collapse', 'collapse');
 		accCollapseDiv.setAttribute('data-bs-parent', '#accordionSoftSkills');
-		
-		if(isFirstItem) {
+
+		if (isFirstItem) {
 			accCollapseDiv.classList.add('show');
 		}
 
@@ -136,10 +337,13 @@ const displayAccordionContent = (softSkills) => {
 };
 
 
-if(socialMediaContainer) {
+if (socialMediaContainer) {
 	displaySocialMediaButtons(socialMedia);
 } else {
 	console.error("Error: Could not find the container with class '.social-media-icons'");
 };
 
 displayAccordionContent(softSkills);
+displayEducationContent(education);
+displayCertificationContent(certifications);
+displayWorkContent(certifications);
