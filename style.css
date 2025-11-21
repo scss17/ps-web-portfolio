@@ -156,3 +156,12 @@ section.hero img {
 .social-icon-superprof:hover {
 	--brand-color: var(--superprof-red);
 }
+
+/* ======================== */
+/* === ABOUT ME SECTION === */
+/* ======================== */
+
+/* About me Image */
+section.about-me img {
+	border-radius: 35%;
+}
