@@ -23,7 +23,7 @@ const education = [
 	{
 		'title': 'Education',
 		'icons': ['fa-solid', 'fa-school'],
-		'institutions': [
+		'items': [
 			{
 				'program': 'Information and Computer Systems Diploma (ICS)',
 				'dates': 'September 2023 – August 2025',
@@ -44,7 +44,7 @@ const certifications = [
 	{
 		'title': 'Certifications',
 		'icons': ['fa-solid', 'fa-certificate'],
-		'certifications': [
+		'items': [
 			{
 				'title': 'Data Science Professional Certificate (V2)',
 				'issuer': 'IBM via Coursera',
@@ -90,142 +90,105 @@ const certificationContainer = document.querySelector('.certification-container'
 //=== FUNCTIONS ===
 //=================
 
-const displayCertificationContent = (experience) => {
-	experience.forEach(category => {
-		// Create the main header
-		const h3 = document.createElement('h3');
-		h3.classList.add('mb-3', 'ms-4');
+const renderCategory = (container, category, buildCardBody) => {
+	// Create Title
+	const h3 = document.createElement('h3');
+	h3.classList.add('mb-3', 'ms-4');
 
-		// Create the icon
-		const iconSpan = document.createElement('span');
-		const icon = document.createElement('i');
-		icon.classList.add(...category.icons);
+	const iconSpan = document.createElement('span');
+	const icon = document.createElement('i');
+	icon.classList.add(...category.icons);
 
-		// Append elements
-		iconSpan.appendChild(icon);
-		h3.appendChild(iconSpan);
-		h3.append(` ${category.title}`);
+	iconSpan.appendChild(icon);
+	h3.appendChild(iconSpan);
+	h3.append(` ${category.title}`);
 
-		certificationContainer.appendChild(h3);
+	container.appendChild(h3);
 
-		category.certifications.forEach(certification => {
+	// Render each item
+	category.items.forEach(item => {
+		const cardDiv = document.createElement('div');
+		cardDiv.classList.add('card', 'rounded-5', 'mb-4');
 
-			const cardDiv = document.createElement('div');
-			cardDiv.classList.add('card', 'rounded-5', 'mb-4');
+		const cardBody = buildCardBody(item);
+		cardDiv.appendChild(cardBody);
 
-			const cardBody = document.createElement('div');
-			cardBody.classList.add('card-body');
-
-			const cardTitle = document.createElement('h5');
-			cardTitle.classList.add('card-title', 'fw-bold');
-			cardTitle.textContent = certification.title;
-
-			const detailsDiv = document.createElement('div');
-			detailsDiv.classList.add('ps-2', 'mt-2');
-
-			const datesH6 = document.createElement('h6');
-			datesH6.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
-
-			const datesIconSpan = document.createElement('span');
-			const datesIcon = document.createElement('i');
-			datesIcon.classList.add('fa-regular', 'fa-calendar');
-
-			datesIconSpan.appendChild(datesIcon);
-			datesH6.appendChild(datesIconSpan);
-			datesH6.append(` ${certification.dates}`);
-
-			const descriptionP = document.createElement('p');
-			descriptionP.classList.add('card-text');
-			descriptionP.textContent = certification.description;
-
-			detailsDiv.appendChild(datesH6);
-			detailsDiv.appendChild(descriptionP);
-
-			certification.links.forEach(link => {
-				const linkA = document.createElement('a');
-				linkA.href = link.link;
-				linkA.classList.add('card-link');
-				linkA.textContent = link.text;
-				linkA.target = '_blank';
-
-				detailsDiv.appendChild(linkA);
-			});
-
-			cardBody.appendChild(cardTitle);
-			cardBody.appendChild(detailsDiv);
-			cardDiv.appendChild(cardBody);
-			certificationContainer.appendChild(cardDiv);
-		});
+		container.appendChild(cardDiv);
 	});
 };
 
-const displayEducationContent = (experience) => {
-	experience.forEach(category => {
-		// Create the main header
-		const h3 = document.createElement('h3');
-		h3.classList.add('mb-3', 'ms-4');
+const buildEducationCard = (institution) => {
+	const body = document.createElement('div');
+	body.classList.add('card-body');
 
-		// Create the icon
-		const iconSpan = document.createElement('span');
-		const icon = document.createElement('i');
-		icon.classList.add(...category.icons);
+	const title = document.createElement('h5');
+	title.classList.add('card-title', 'fw-bold');
+	title.textContent = institution.program;
 
-		// Append elements
-		iconSpan.appendChild(icon);
-		h3.appendChild(iconSpan);
-		h3.append(` ${category.title}`);
+	const details = document.createElement('div');
+	details.classList.add('ps-2', 'mt-2');
 
-		educationContainer.appendChild(h3);
+	const dates = document.createElement('h6');
+	dates.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
 
-		category.institutions.forEach(institution => {
+	const datesIcon = document.createElement('i');
+	datesIcon.classList.add('fa-regular', 'fa-calendar');
 
-			const cardDiv = document.createElement('div');
-			cardDiv.classList.add('card', 'rounded-5', 'mb-4');
+	dates.appendChild(datesIcon);
+	dates.append(` ${institution.dates}`);
 
-			const cardBody = document.createElement('div');
-			cardBody.classList.add('card-body');
+	const location = document.createElement('p');
+	location.textContent = institution.location;
 
-			const cardTitle = document.createElement('h5');
-			cardTitle.classList.add('card-title', 'fw-bold');
-			cardTitle.textContent = institution.program;
+	const link = document.createElement('a');
+	link.href = institution.link;
+	link.classList.add('card-link');
+	link.textContent = 'Program Overview';
+	link.target = '_blank';
 
-			const detailsDiv = document.createElement('div');
-			detailsDiv.classList.add('ps-2', 'mt-2');
+	details.append(dates, location, link);
 
-			const datesH6 = document.createElement('h6');
-			datesH6.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+	body.append(title, details);
+	return body;
+};
 
-			const datesIconSpan = document.createElement('span');
-			const datesIcon = document.createElement('i');
-			datesIcon.classList.add('fa-regular', 'fa-calendar');
+const buildCertificationCard = (cert) => {
+	const body = document.createElement('div');
+	body.classList.add('card-body');
 
-			datesIconSpan.appendChild(datesIcon);
-			datesH6.appendChild(datesIconSpan);
-			datesH6.append(` ${institution.dates}`);
+	const title = document.createElement('h5');
+	title.classList.add('card-title', 'fw-bold');
+	title.textContent = cert.title;
 
-			const locationP = document.createElement('p');
-			locationP.classList.add('card-text');
-			locationP.textContent = institution.location;
+	const details = document.createElement('div');
+	details.classList.add('ps-2', 'mt-2');
 
-			const linkA = document.createElement('a');
-			linkA.href = institution.link;
-			linkA.classList.add('card-link');
-			linkA.textContent = 'Program Overview';
-			linkA.target = '_blank';
+	const dates = document.createElement('h6');
+	dates.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
 
-			detailsDiv.appendChild(datesH6);
-			detailsDiv.appendChild(locationP);
-			detailsDiv.appendChild(linkA);
+	const datesIcon = document.createElement('i');
+	datesIcon.classList.add('fa-regular', 'fa-calendar');
 
-			cardBody.appendChild(cardTitle);
-			cardBody.appendChild(detailsDiv);
+	dates.appendChild(datesIcon);
+	dates.append(` ${cert.dates}`);
 
-			cardDiv.appendChild(cardBody);
+	const desc = document.createElement('p');
+	desc.textContent = cert.description;
 
-			educationContainer.appendChild(cardDiv);
-		});
+	details.append(dates, desc);
+
+	cert.links.forEach(l => {
+		const a = document.createElement('a');
+		a.href = l.link;
+		a.target = '_blank';
+		a.classList.add('card-link');
+		a.textContent = l.text;
+		details.append(a);
 	});
-}
+
+	body.append(title, details);
+	return body;
+};
 
 const displaySocialMediaButtons = (socialMedia) => {
 	// Define base classes for the social media button
@@ -251,9 +214,7 @@ const displaySocialMediaButtons = (socialMedia) => {
 	});
 };
 
-
 const displayAccordionContent = (softSkills) => {
-
 	// Iterate through the array and create components
 	softSkills.forEach((element, index) => {
 		// Create dynamic ids
@@ -344,6 +305,10 @@ if (socialMediaContainer) {
 };
 
 displayAccordionContent(softSkills);
-displayEducationContent(education);
-displayCertificationContent(certifications);
-displayWorkContent(certifications);
+education.forEach(category =>
+	renderCategory(educationContainer, category, buildEducationCard)
+);
+
+certifications.forEach(category =>
+	renderCategory(certificationContainer, category, buildCertificationCard)
+);
