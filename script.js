@@ -4,12 +4,12 @@
 //=================
 
 const socialMedia = [
-	{ 'name': 'linkedin', 'url': 'https://www.linkedin.com/in/ps-campos', 'iconClass': 'fab fa-linkedin' },
-	{ 'name': 'github', 'url': 'https://github.com/scss17', 'iconClass': 'fab fa-github' },
-	{ 'name': 'kaggle', 'url': 'https://www.kaggle.com/scss17', 'iconClass': 'fab fa-kaggle' },
-	{ 'name': 'medium', 'url': 'https://medium.com/@pscampos/', 'iconClass': 'fab fa-medium' },
-	{ 'name': 'upwork', 'url': 'https://www.upwork.com/freelancers/~014a7e0cab666bf715', 'iconClass': 'fa-brands fa-square-upwork' },
-	{ 'name': 'superprof', 'url': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html', 'iconClass': 'fa-solid fa-link' }
+	{ 'name': 'Linkedin', 'url': 'https://www.linkedin.com/in/ps-campos', 'iconClass': 'fab fa-linkedin' },
+	{ 'name': 'Github', 'url': 'https://github.com/scss17', 'iconClass': 'fab fa-github' },
+	{ 'name': 'Kaggle', 'url': 'https://www.kaggle.com/scss17', 'iconClass': 'fab fa-kaggle' },
+	{ 'name': 'Medium', 'url': 'https://medium.com/@pscampos/', 'iconClass': 'fab fa-medium' },
+	{ 'name': 'Upwork', 'url': 'https://www.upwork.com/freelancers/~014a7e0cab666bf715', 'iconClass': 'fa-brands fa-square-upwork' },
+	{ 'name': 'Superprof', 'url': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html', 'iconClass': 'fa-solid fa-link' }
 ];
 
 const softSkills = [
@@ -202,6 +202,9 @@ const displaySocialMediaButtons = (socialMedia) => {
 
 		// Add classes
 		anchor.classList.add(...baseClasses, `social-icon-${element.name}`);
+		//! This might be removed later
+		//anchor.setAttribute('data-bs-toggle', 'tooltip');
+		//anchor.setAttribute('data-bs-title', element.name)
 
 		// Create the icon element
 		const icon = document.createElement("i");
@@ -268,7 +271,7 @@ const displayAccordionContent = (softSkills) => {
 			// Create p element and attributes
 			const pContent = document.createElement('p');
 			pContent.textContent = p;
-			pContent.classList.add('text-start')
+			pContent.classList.add('text-start');
 
 			// Append text element to the container
 			accBody.appendChild(pContent);
@@ -312,3 +315,6 @@ education.forEach(category =>
 certifications.forEach(category =>
 	renderCategory(certificationContainer, category, buildCertificationCard)
 );
+
+//const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+//const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
