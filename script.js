@@ -201,7 +201,7 @@ const displaySocialMediaButtons = (socialMedia) => {
 		anchor.target = '_blank'; // Opens the linked document in a new window or tab
 
 		// Add classes
-		anchor.classList.add(...baseClasses, `social-icon-${element.name}`);
+		anchor.classList.add(...baseClasses, `social-icon-${element.name.toLowerCase()}`);
 		//! This might be removed later
 		//anchor.setAttribute('data-bs-toggle', 'tooltip');
 		//anchor.setAttribute('data-bs-title', element.name)
