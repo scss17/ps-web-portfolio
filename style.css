@@ -178,6 +178,10 @@ section.experience {
 /* === ABOUT ME SECTION === */
 /* ======================== */
 
+section.about-me {
+	background-color: var(--floral-white);
+}
+
 /* About me Image */
 section.about-me img {
 	border-radius: 35%;
@@ -206,6 +210,13 @@ section.about-me img {
     
     /* Ensure the content is clickable and fully visible on hover */
     z-index: 10;
+}
+
+/* ========================== */
+/* === CONTACT SECTION === */
+/* ========================== */
+section.contact {
+	
 }
 
 /* ======================*/

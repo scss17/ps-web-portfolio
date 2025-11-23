@@ -80,7 +80,7 @@ const certifications = [
 ];
 
 // HTML elements
-const socialMediaContainer = document.querySelector('.social-media-icons');
+const socialMediaContainers = document.querySelectorAll('.social-media-icons');
 const accordionSoftSkills = document.getElementById('accordionSoftSkills');
 
 const educationContainer = document.querySelector('.education-container');
@@ -190,7 +190,7 @@ const buildCertificationCard = (cert) => {
 	return body;
 };
 
-const displaySocialMediaButtons = (socialMedia) => {
+const displaySocialMediaButtons = (socialMedia, socialMediaContainer) => {
 	// Define base classes for the social media button
 	const baseClasses = ["btn", "btn-lg", "btn-outline-dark", "me-3", "mb-2", "rounded-circle"];
 
@@ -301,8 +301,11 @@ const displayAccordionContent = (softSkills) => {
 };
 
 
-if (socialMediaContainer) {
-	displaySocialMediaButtons(socialMedia);
+if (socialMediaContainers) {
+	socialMediaContainers.forEach(container => {
+		displaySocialMediaButtons(socialMedia, container);
+	})
+	//displaySocialMediaButtons(socialMedia);
 } else {
 	console.error("Error: Could not find the container with class '.social-media-icons'");
 };
