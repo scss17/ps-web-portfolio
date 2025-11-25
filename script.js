@@ -106,6 +106,81 @@ const projects = [
 	},
 ];
 
+const toolset = [
+	{
+		'title': 'Programming Languages',
+		'icons': ["fa-solid", "fa-code"],
+		'items': [
+			{ 'name': 'Python', 'path': "img/logos/programming_languages/python.svg" },
+			{ 'name': 'R', 'path': "img/logos/programming_languages/r.svg" },
+			{ 'name': 'SQL', 'path': "img/logos/programming_languages/sql.svg" },
+			{ 'name': 'C++', 'path': "img/logos/programming_languages/cplusplus.svg" },
+			{ 'name': 'C#', 'path': "img/logos/programming_languages/csharp.svg" },
+			{ 'name': 'JavaScript', 'path': "img/logos/programming_languages/javascript.svg" },
+			{ 'name': 'TypeScript', 'path': "img/logos/programming_languages/typescript.svg" },
+		],
+	},
+	{
+		'title': 'Databases',
+		'icons': ["fa-solid", "fa-database"],
+		'items': [
+			{ 'name': 'MySQL', 'path': "img/logos/databases/mysql.svg" },
+			{ 'name': 'SQLServer', 'path': "img/logos/databases/sqlserver.svg" },
+			{ 'name': 'PostgreSQL', 'path': "img/logos/databases/postgresql.svg" },
+			{ 'name': 'Oracle', 'path': "img/logos/databases/oracle.svg" },
+			{ 'name': 'MongoDb', 'path': "img/logos/databases/mongodb.svg" },
+		],
+	},
+	{
+		'title': 'Web Development',
+		'icons': ["fa-solid", "fa-globe"],
+		'items': [
+			{ 'name': 'HTML5', 'path': "img/logos/web_development/html5.svg" },
+			{ 'name': 'CSS3', 'path': "img/logos/web_development/css.svg" },
+			{ 'name': 'React', 'path': "img/logos/web_development/react.svg" },
+			{ 'name': 'Node.js', 'path': "img/logos/web_development/nodedotjs.svg" },
+			{ 'name': 'Bootstrap', 'path': "img/logos/web_development/bootstrap.svg" },
+			{ 'name': 'Prisma', 'path': "img/logos/web_development/prisma.svg" },
+		],
+	},
+	{
+		'title': 'Data Analysis',
+		'icons': ["fa-solid", "fa-chart-bar"],
+		'items': [
+			{ 'name': 'NumPy', 'path': "img/logos/data_analysis/numpy.svg" },
+			{ 'name': 'Pandas', 'path': "img/logos/data_analysis/pandas.svg" },
+			{ 'name': 'ScikitLearn', 'path': "img/logos/data_analysis/scikitlearn.svg" },
+			{ 'name': 'TensorFlow', 'path': "img/logos/data_analysis/tensorflow.svg" },
+			{ 'name': 'Tidyverse', 'path': "img/logos/data_analysis/tidyverse.svg" },
+		],
+	},
+	{
+		'title': 'Data Visualization',
+		'icons': ["fa-solid", "fa-chart-pie"],
+		'items': [
+			{ 'name': 'Power BI', 'path': "img/logos/data_visualization/powerbi.svg" },
+			{ 'name': 'Tableau', 'path': "img/logos/data_visualization/tableau.svg" },
+			{ 'name': 'Plotly', 'path': "img/logos/data_visualization/plotly.svg" },
+			//{ 'name': 'Matplotlib', 'path': "img/logos/data_visualization/matplotlib.svg" },
+			//{ 'name': 'Seaborn', 'path': "img/logos/data_visualization/seaborn.svg" },
+			//{ 'name': 'ggplot2', 'path': "img/logos/data_visualization/ggplot2.svg" },
+		],
+	},
+	{
+		'title': 'Other Tools',
+		'icons': ["fa-solid", "fa-toolbox"],
+		'items': [
+			{ 'name': 'Git', 'path': "img/logos/other_tools/git.svg" },
+			{ 'name': 'GitHub', 'path': "img/logos/other_tools/github.svg" },
+			{ 'name': 'Anaconda', 'path': "img/logos/other_tools/anaconda.svg" },
+			{ 'name': 'Jupyter', 'path': "img/logos/other_tools/jupyter.svg" },
+			{ 'name': 'Docker', 'path': "img/logos/other_tools/docker.svg" },
+			{ 'name': 'LaTex', 'path': "img/logos/other_tools/latex.svg" },
+		],
+	}
+];
+
+
 // HTML elements
 const socialMediaContainers = document.querySelectorAll('.social-media-icons');
 const accordionSoftSkills = document.getElementById('accordionSoftSkills');
@@ -113,10 +188,72 @@ const accordionSoftSkills = document.getElementById('accordionSoftSkills');
 const educationContainer = document.querySelector('.education-container');
 const certificationContainer = document.querySelector('.certification-container');
 const projectsContainer = document.querySelector('.projects-container');
+const toolContainer = document.querySelector('.tool-container-outer');
 
 //=================
 //=== FUNCTIONS ===
 //=================
+
+const displayTools = (tools) => {
+	tools.forEach(tool => {
+
+		// Create Outer Boostrap Column
+		const innerDiv = document.createElement('div');
+		innerDiv.classList.add("tool-container-inner", "col-12", "col-md-6", "my-5");
+
+		// Create header container
+		const headerDiv = document.createElement('div');
+		headerDiv.classList.add("tool-container-header", "text-center", "mb-4");
+
+		// Create elements
+		const h4 = document.createElement('h4');
+		h4.classList.add("subtitle");
+		h4.innerHTML = `
+			<span><i class="${tool.icons.join(' ')} me-2"></i></span>
+			${tool.title}
+			`;
+
+		headerDiv.appendChild(h4);
+		innerDiv.appendChild(headerDiv);
+
+		// Create Tool List Container 
+		const toolListDiv = document.createElement('div');
+		const toolClass = tool.title.toLowerCase().split(" ").join('-');
+		toolListDiv.classList.add("tools", toolClass);
+
+		const listDiv = document.createElement('div');
+		listDiv.classList.add("d-flex", "flex-wrap", "gap-4", "justify-content-center");
+
+		// Get the logos
+		tool.items.forEach(logo => {
+			const logoWrapper = document.createElement('a');
+			logoWrapper.classList.add('tool-logo-wrapper');
+
+			logoWrapper.setAttribute('data-bs-toggle', 'tooltip');
+			logoWrapper.setAttribute('title', logo.name);
+
+			const logoImg = document.createElement('img');
+			logoImg.src = logo.path;
+			logoImg.alt = `${logo.name} Logo`;
+			logoImg.classList.add('tool-logo-image', 'img-fluid');
+
+			// Append the image to the wrapper
+			logoWrapper.appendChild(logoImg);
+
+			// Append the wrapper to the list container
+			listDiv.appendChild(logoWrapper);
+		});
+
+		// Assemble the list
+		toolListDiv.appendChild(listDiv);
+		innerDiv.appendChild(toolListDiv);
+
+		// Append the entire category column to the outer container
+		toolContainer.appendChild(innerDiv);
+	});
+};
+
+displayTools(toolset);
 
 const displayProjects = (projects) => {
 	projects.forEach(project => {

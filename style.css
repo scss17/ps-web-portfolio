@@ -48,395 +48,425 @@
 /* Background + layout */
 html,
 body {
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	width: 100%;
+}
 
-	html,
-	body {
-		font-family: 'Montserrat', sans-serif;
-		height: 100vh;
-		width: 100%;
-	}
+/* =====================*/
+/* === TEXT ELEMENTS ===*/
+/* ==================== */
+#bg-flame {
+	color: var(--flame);
+}
 
-	/* =====================*/
-	/* === TEXT ELEMENTS ===*/
-	/* ==================== */
-	#bg-flame {
-		color: var(--flame);
-	}
+/* =======================*/
+/* === BUTTON ELEMENTS ===*/
+/* =======================*/
 
-	/* =======================*/
-	/* === BUTTON ELEMENTS ===*/
-	/* =======================*/
+/* Primary button */
+.btn-primary {
+	--bs-btn-color: var(--floral-white);
+	--bs-btn-bg: var(--flame);
+	--bs-btn-border-color: var(--flame);
+	--bs-btn-hover-color: var(--floral-white);
+	--bs-btn-hover-bg: var(--flame);
+	--bs-btn-hover-border-color: var(--flame);
+	--bs-btn-focus-shadow-rgb: 49, 132, 253;
+	--bs-btn-focus-shadow-rgb: 49, 132, 253;
+	--bs-btn-active-color: var(--floral-white);
+	--bs-btn-active-bg: var(--flame);
+	--bs-btn-active-border-color: var(--flame);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--floral-white);
+	--bs-btn-disabled-bg: var(--flame);
+	--bs-btn-disabled-border-color: var(--flame);
+}
 
-	/* Primary button */
-	.btn-primary {
-		--bs-btn-color: var(--floral-white);
-		--bs-btn-bg: var(--flame);
-		--bs-btn-border-color: var(--flame);
-		--bs-btn-hover-color: var(--floral-white);
-		--bs-btn-hover-bg: var(--flame);
-		--bs-btn-hover-border-color: var(--flame);
-		--bs-btn-focus-shadow-rgb: 49, 132, 253;
-		--bs-btn-focus-shadow-rgb: 49, 132, 253;
-		--bs-btn-active-color: var(--floral-white);
-		--bs-btn-active-bg: var(--flame);
-		--bs-btn-active-border-color: var(--flame);
-		--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-		--bs-btn-disabled-color: var(--floral-white);
-		--bs-btn-disabled-bg: var(--flame);
-		--bs-btn-disabled-border-color: var(--flame);
-	}
+/* Outline button */
+.btn-outline-primary {
+	--bs-btn-color: var(--flame);
+	--bs-btn-border-color: var(--flame);
+	--bs-btn-hover-color: var(--floral-white);
+	--bs-btn-hover-bg: var(--flame);
+	--bs-btn-hover-border-color: var(--flame);
+	--bs-btn-focus-shadow-rgb: 13, 110, 253;
+	--bs-btn-focus-shadow-rgb: 13, 110, 253;
+	--bs-btn-active-color: var(--floral-white);
+	--bs-btn-active-bg: var(--flame);
+	--bs-btn-active-border-color: var(--flame);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: var(--flame);
+	--bs-btn-disabled-bg: transparent;
+	--bs-btn-disabled-border-color: var(--flame);
+	--bs-gradient: none;
+}
 
-	/* Outline button */
-	.btn-outline-primary {
-		--bs-btn-color: var(--flame);
-		--bs-btn-border-color: var(--flame);
-		--bs-btn-hover-color: var(--floral-white);
-		--bs-btn-hover-bg: var(--flame);
-		--bs-btn-hover-border-color: var(--flame);
-		--bs-btn-focus-shadow-rgb: 13, 110, 253;
-		--bs-btn-focus-shadow-rgb: 13, 110, 253;
-		--bs-btn-active-color: var(--floral-white);
-		--bs-btn-active-bg: var(--flame);
-		--bs-btn-active-border-color: var(--flame);
-		--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-		--bs-btn-disabled-color: var(--flame);
-		--bs-btn-disabled-bg: transparent;
-		--bs-btn-disabled-border-color: var(--flame);
-		--bs-gradient: none;
-	}
+.card-link {
+	text-decoration: none;
+	color: var(--flame);
+	font-weight: 600;
+}
 
-	.card-link {
-		text-decoration: none;
-		color: var(--flame);
-		font-weight: 600;
-	}
+a {
+	color: var(--flame)
+}
 
-	a {
-		color: var(--flame)
-	}
+/* ==================== */
+/* === HERO SECTION === */
+/* ==================== */
 
-	/* ==================== */
-	/* === HERO SECTION === */
-	/* ==================== */
-
-	section.hero {
-		min-height: 100vh;
+section.hero {
+	min-height: 100vh;
 
 
-		/* Background Properties */
-		background-image: url("img/hero-background01.jpg");
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
+	/* Background Properties */
+	background-image: url("img/hero-background01.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 
-		color: floralwhite;
-	}
+	color: floralwhite;
+}
 
-	/* Hero Image */
-	section.hero img {
-		border-radius: 35%;
-	}
+/* Hero Image */
+section.hero img {
+	border-radius: 35%;
+}
 
-	/* Custom sizing for the social media buttons */
-	.social-media-icons .btn-lg {
-		width: 3rem;
-		height: 3rem;
-		padding: 0;
-		line-height: 3rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 3rem;
-		height: 3rem;
-		padding: 0;
-		line-height: 3rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-	}
+/* Custom sizing for the social media buttons */
+.social-media-icons .btn-lg {
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	line-height: 3rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	line-height: 3rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	/* Social media buttons */
-	.social-media-icons .btn-outline-dark {
-		background-color: var(--floral-white);
-		border-color: var(--floral-white);
-		color: var(--black-olive);
-		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-		transition: 0.3s;
-	}
+/* Social media buttons */
+.social-media-icons .btn-outline-dark {
+	background-color: var(--floral-white);
+	border-color: var(--floral-white);
+	color: var(--black-olive);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+}
 
-	.btn-outline-dark:hover {
-		color: floralwhite;
-		background-color: var(--brand-color);
-		border-color: var(--brand-color);
-		color: floralwhite;
-		background-color: var(--brand-color);
-		border-color: var(--brand-color);
-	}
+.btn-outline-dark:hover {
+	color: floralwhite;
+	background-color: var(--brand-color);
+	border-color: var(--brand-color);
+	color: floralwhite;
+	background-color: var(--brand-color);
+	border-color: var(--brand-color);
+}
 
-	/* Define the brand colors */
-	.social-icon-github:hover {
-		--brand-color: var(--github-black);
-		--brand-color: var(--github-black);
-	}
+/* Define the brand colors */
+.social-icon-github:hover {
+	--brand-color: var(--github-black);
+	--brand-color: var(--github-black);
+}
 
-	.social-icon-linkedin:hover {
-		--brand-color: var(--linkedin-blue);
-		--brand-color: var(--linkedin-blue);
-	}
+.social-icon-linkedin:hover {
+	--brand-color: var(--linkedin-blue);
+	--brand-color: var(--linkedin-blue);
+}
 
-	.social-icon-kaggle:hover {
-		--brand-color: var(--kaggle-blue);
-		--brand-color: var(--kaggle-blue);
-	}
+.social-icon-kaggle:hover {
+	--brand-color: var(--kaggle-blue);
+	--brand-color: var(--kaggle-blue);
+}
 
-	.social-icon-upwork:hover {
-		--brand-color: var(--upwork-green);
-		--brand-color: var(--upwork-green);
-	}
+.social-icon-upwork:hover {
+	--brand-color: var(--upwork-green);
+	--brand-color: var(--upwork-green);
+}
 
-	.social-icon-medium:hover {
-		--brand-color: var(--medium-green);
-		--brand-color: var(--medium-green);
-	}
+.social-icon-medium:hover {
+	--brand-color: var(--medium-green);
+	--brand-color: var(--medium-green);
+}
 
-	.social-icon-superprof:hover {
-		--brand-color: var(--superprof-red);
-	}
+.social-icon-superprof:hover {
+	--brand-color: var(--superprof-red);
+}
 
-	/* ======================== */
-	/* === ABOUT ME SECTION === */
-	/* ======================== */
+/* ======================== */
+/* === ABOUT ME SECTION === */
+/* ======================== */
 
-	/*
+/*
 section.about-me {
 	background-color: var(--floral-white);
 }
 */
 
-	/* ========================== */
-	/* === EXPERIENCE SECTION === */
-	/* ========================== */
-	section.experience {
-		background-color: var(--floral-white);
-	}
+/* ========================== */
+/* === EXPERIENCE SECTION === */
+/* ========================== */
+section.experience {
+	background-color: var(--floral-white);
+}
 
 
 
-	/* About me Image */
-	section.about-me img {
-		border-radius: 35%;
-	}
+/* About me Image */
+section.about-me img {
+	border-radius: 35%;
+}
 
-	/* ======================== */
-	/* === CARD HOVER EFFECT ===*/
-	/* ======================== */
+/* ======================== */
+/* === CARD HOVER EFFECT ===*/
+/* ======================== */
 
-	.card {
-		/* Step 1: Set up the transition for smoothness */
-		transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.card {
+	/* Step 1: Set up the transition for smoothness */
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-		/* Optional: Set a subtle default shadow to match the Bootstrap feel */
-		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-		/* Step 1: Set up the transition for smoothness */
-		transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	/* Optional: Set a subtle default shadow to match the Bootstrap feel */
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	/* Step 1: Set up the transition for smoothness */
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-		/* Optional: Set a subtle default shadow to match the Bootstrap feel */
-		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	}
+	/* Optional: Set a subtle default shadow to match the Bootstrap feel */
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
 
-	.card:hover {
-		/* Step 2: The Lift (Box Shadow) */
-		/* Lifts the card by giving it a larger, more prominent shadow */
-		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+.card:hover {
+	/* Step 2: The Lift (Box Shadow) */
+	/* Lifts the card by giving it a larger, more prominent shadow */
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 
-		/* Step 3: The Subtle Scale (Transform) */
-		/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
-		transform: translateY(-5px) scale(1.01);
+	/* Step 3: The Subtle Scale (Transform) */
+	/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
+	transform: translateY(-5px) scale(1.01);
 
-		/* Ensure the content is clickable and fully visible on hover */
-		z-index: 10;
-		/* Step 2: The Lift (Box Shadow) */
-		/* Lifts the card by giving it a larger, more prominent shadow */
-		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+	/* Ensure the content is clickable and fully visible on hover */
+	z-index: 10;
+	/* Step 2: The Lift (Box Shadow) */
+	/* Lifts the card by giving it a larger, more prominent shadow */
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 
-		/* Step 3: The Subtle Scale (Transform) */
-		/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
-		transform: translateY(-5px) scale(1.01);
+	/* Step 3: The Subtle Scale (Transform) */
+	/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
+	transform: translateY(-5px) scale(1.01);
 
-		/* Ensure the content is clickable and fully visible on hover */
-		z-index: 10;
-	}
+	/* Ensure the content is clickable and fully visible on hover */
+	z-index: 10;
+}
 
-	/* ======================== **/
-	/* === PROJECTS SECTION === */
-	/* ======================== **/
+/* ======================== **/
+/* === PROJECTS SECTION === */
+/* ======================== **/
 
-	/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-	section.projects .flip-card {
-		background-color: transparent;
-		border-radius: 1.5rem;
-		overflow: hidden;
-		perspective: 1000px;
-		aspect-ratio: 3.5 / 2.5;
-	}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+section.projects .flip-card {
+	background-color: transparent;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	perspective: 1000px;
+	aspect-ratio: 3.5 / 2.5;
+}
 
-	/* This container is needed to position the front and back side */
-	section.projects .flip-card-inner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		transition: transform 0.8s ease;
-		transform-style: preserve-3d;
-	}
+/* This container is needed to position the front and back side */
+section.projects .flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s ease;
+	transform-style: preserve-3d;
+}
 
-	/* Do an horizontal flip when you move the mouse over the flip box container */
-	section.projects .flip-card:hover .flip-card-inner {
-		transform: rotateY(180deg);
-	}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+section.projects .flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
 
-	/* Position the front and back side */
-	section.projects .flip-card-front,
-	section.projects .flip-card-back {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		backface-visibility: hidden;
-		border-radius: 1.5rem;
-		overflow: hidden;
-		/* ensures consistent radius */
-	}
+/* Position the front and back side */
+section.projects .flip-card-front,
+section.projects .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	/* ensures consistent radius */
+}
 
-	/* Style the front side (fallback if image is missing) */
-	section.projects .flip-card-front img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		/* no distorted images */
-		display: block;
-	}
+/* Style the front side (fallback if image is missing) */
+section.projects .flip-card-front img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* no distorted images */
+	display: block;
+}
 
-	/* Style the back side */
-	section.projects .flip-card-back {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 1.5rem;
-		background: linear-gradient(90deg,
-				var(--floral-white) 0%,
-				var(--timberwolf) 50%,
-				rgba(235, 94, 40, 0.25) 100%);
-		color: var(--eerie-black);
-		transform: rotateY(180deg);
-	}
+/* Style the back side */
+section.projects .flip-card-back {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+	background: linear-gradient(90deg,
+			var(--floral-white) 0%,
+			var(--timberwolf) 50%,
+			rgba(235, 94, 40, 0.25) 100%);
+	color: var(--eerie-black);
+	transform: rotateY(180deg);
+}
 
-	section.projects .flip-card-back a {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		align-items: center;
-		width: 3rem;
-		height: 3rem;
-		background: var(--floral-white);
-		border-radius: 50%;
-		margin-top: 1rem;
-	}
+section.projects .flip-card-back a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 3rem;
+	height: 3rem;
+	background: var(--floral-white);
+	border-radius: 50%;
+	margin-top: 1rem;
+}
 
-	section.projects .flip-card-back a i {
-		font-size: 2rem;
-		color: var(--eerie-black);
-	}
+section.projects .flip-card-back a i {
+	font-size: 2rem;
+	color: var(--eerie-black);
+}
 
-	section.projects {
-		background-color: var(--timberwolf);
-	}
+section.projects {
+	background-color: var(--timberwolf);
+}
 
-	section.projects .portfolio-card {
-		position: relative;
-		border-radius: 2rem;
-		overflow: hidden;
-		display: flex;
-	}
-
-
-	section.projects .portfolio-card img {
-		width: 100%;
-		transition: 0.5s ease;
-		transition: 0.5s ease;
-	}
+section.projects .portfolio-card {
+	position: relative;
+	border-radius: 2rem;
+	overflow: hidden;
+	display: flex;
+}
 
 
-	section.projects .portfolio-card:hover img {
-		transform: scale(1.1);
-		cursor: pointer;
-	}
-
-	section.projects .portfolio-card .portfolio-layer {
-		color: var(--floral-white);
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
-		background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		padding: 0 4rem;
-		transform: translateY(100%);
-		transition: 0.5s ease;
-	}
-
-	section.projects .portfolio-card:hover .portfolio-layer {
-		transform: translateY(0);
-	}
+section.projects .portfolio-card img {
+	width: 100%;
+	transition: 0.5s ease;
+	transition: 0.5s ease;
+}
 
 
-	section.projects .portfolio-layer a {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		width: 3rem;
-		height: 3rem;
-		background: var(--floral-white);
-		border-radius: 50%;
-	}
+section.projects .portfolio-card:hover img {
+	transform: scale(1.1);
+	cursor: pointer;
+}
 
-	section.projects .portfolio-layer a i {
-		font-size: 2rem;
-		color: var(--eerie-black);
-	}
+section.projects .portfolio-card .portfolio-layer {
+	color: var(--floral-white);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
+	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 4rem;
+	transform: translateY(100%);
+	transition: 0.5s ease;
+}
 
-	/* ========================== */
-	/* === CONTACT SECTION === */
-	/* ========================== */
+section.projects .portfolio-card:hover .portfolio-layer {
+	transform: translateY(0);
+}
 
-	/* ======================*/
-	/* === RESUME SECTION ===*/
-	/* ======================*/
 
-	.offcanvas-body {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
+section.projects .portfolio-layer a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 3rem;
+	height: 3rem;
+	background: var(--floral-white);
+	border-radius: 50%;
+}
 
-	.offcanvas-body iframe {
-		flex-grow: 1;
-		min-height: 0;
-		min-height: 0;
-	}
+section.projects .portfolio-layer a i {
+	font-size: 2rem;
+	color: var(--eerie-black);
+}
 
-	.iframe-style {
-		width: 100%;
-		height: 100vh;
+/* ========================== */
+/* === CONTACT SECTION === */
+/* ========================== */
 
-		padding: 0;
-		margin: 0;
+/* ======================*/
+/* === RESUME SECTION ===*/
+/* ======================*/
 
-		border: none;
-	}
+.offcanvas-body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.offcanvas-body iframe {
+	flex-grow: 1;
+	min-height: 0;
+	min-height: 0;
+}
+
+.iframe-style {
+	width: 100%;
+	height: 100vh;
+
+	padding: 0;
+	margin: 0;
+
+	border: none;
+}
+
+
+/* ======================*/
+/* === TOOLS SECTION ===*/
+/* ======================*/
+
+/* Tool Logo Sizing */
+.tool-logo-wrapper {
+	/* Set fixed size for the container */
+	width: 50px;
+	height: 50px;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+/* SVG Path Color and Hover Effect */
+.tool-logo-path {
+	/* Default color (e.g., black-olive) */
+	fill: var(--black-olive);
+	transition: fill 0.3s ease;
+}
+
+/* Hover effect */
+.tool-logo-wrapper:hover {
+	/* Subtle lift */
+	transform: translateY(-5px) scale(1.05);
+}
+
+/* Color change on hover */
+.tool-logo-wrapper:hover .tool-logo-path {
+	/* Change to a specific brand color, or just your flame color */
+	fill: var(--flame);
+}
