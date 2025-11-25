@@ -79,16 +79,102 @@ const certifications = [
 	}
 ];
 
+const projects = [
+	{
+		'title': 'Web Design',
+		'description': "Created a webpage showcasing a visual art student's watercolor paintings for sale",
+		'img': 'img/project-paintingalone.jpg',
+		'link': 'https://github.com/scss17/Paintingalone-Web-Page'
+	},
+	{
+		'title': 'SQL',
+		'description': "Analyze Sakila DVD Rental database with SQL, utilize database management systems, and present insights through visualizations",
+		'img': 'img/project-dvd-rentals.jpg',
+		'link': 'https://github.com/scss17/Sakila-DVD-Rental-Data'
+	},
+	{
+		'title': 'Data Science',
+		'description': "Analyzed Motivate's bike-share data to unveil usage patterns in major U.S. cities—Chicago, NYC, and Washington, DC.",
+		'img': 'img/project-motivate-bike-share.jpg',
+		'link': 'https://www.kaggle.com/code/scss17/motivate-bike-share-data'
+	},
+	{
+		'title': 'Data Science',
+		'description': "Analyzed smart device usage for Bellabeat, extracting insights to inform marketing strategy and enhance customer experience",
+		'img': 'img/project-fitness-tracker.jpg',
+		'link': 'https://www.kaggle.com/code/scss17/fitbit-fitness-tracker-data'
+	},
+];
+
 // HTML elements
 const socialMediaContainers = document.querySelectorAll('.social-media-icons');
 const accordionSoftSkills = document.getElementById('accordionSoftSkills');
 
 const educationContainer = document.querySelector('.education-container');
 const certificationContainer = document.querySelector('.certification-container');
+const projectsContainer = document.querySelector('.projects-container');
 
 //=================
 //=== FUNCTIONS ===
 //=================
+
+const displayProjects = (projects) => {
+	projects.forEach(project => {
+
+		// Outer Bootstrap column
+		const outerContainer = document.createElement('div');
+		outerContainer.classList.add("col-12", "col-md-6", "col-lg-3", "mb-5");
+
+		// Flip card structure
+		const cardContainer = document.createElement('div');
+		cardContainer.classList.add("flip-card");
+
+		const cardInner = document.createElement('div');
+		cardInner.classList.add("flip-card-inner");
+
+		// Front of the card
+		const front = document.createElement('div');
+		front.classList.add("flip-card-front");
+
+		const img = document.createElement('img');
+		img.src = project.img;
+		img.alt = `Project: ${project.title}`;
+		img.classList.add('img-fluid');
+
+		front.appendChild(img);
+
+		// Back of the card
+		const back = document.createElement('div');
+		back.classList.add("flip-card-back");   // ← FIXED CLASS
+
+		const h4 = document.createElement('h4');
+		h4.classList.add('fw-bolder');
+		h4.textContent = project.title;
+
+		const p = document.createElement('p');
+		p.textContent = project.description;
+
+		const a = document.createElement('a');
+		a.href = project.link;
+
+		const i = document.createElement('i');
+		i.classList.add("bi", "bi-link");
+		a.appendChild(i);
+
+		back.appendChild(h4);
+		back.appendChild(p);
+		back.appendChild(a);
+
+		// Assemble card
+		cardInner.appendChild(front);
+		cardInner.appendChild(back);
+
+		cardContainer.appendChild(cardInner);
+		outerContainer.appendChild(cardContainer);
+
+		projectsContainer.appendChild(outerContainer);
+	});
+};
 
 const renderCategory = (container, category, buildCardBody) => {
 	// Create Title
@@ -318,6 +404,8 @@ education.forEach(category =>
 certifications.forEach(category =>
 	renderCategory(certificationContainer, category, buildCertificationCard)
 );
+
+displayProjects(projects);
 
 //! Bootstrap Tooltip is not longer used
 //const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
