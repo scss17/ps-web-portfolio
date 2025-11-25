@@ -319,5 +319,72 @@ certifications.forEach(category =>
 	renderCategory(certificationContainer, category, buildCertificationCard)
 );
 
+//! Bootstrap Tooltip is not longer used
 //const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 //const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+document.addEventListener('DOMContentLoaded', (e) => {
+	const form = document.getElementById('contact-form');
+	const formURL = "https://formspree.io/f/xdkvgrvy";
+
+	// Get the Bootstrap Modal instance
+	const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+	const failModal = new bootstrap.Modal(document.getElementById('failModal'));
+
+	if (form) {
+		form.addEventListener('submit', async (submitEvent) => {
+
+			// Validation check
+			if (!form.checkValidity()) {
+				submitEvent.preventDefault();
+				submitEvent.stopPropagation();
+
+				// Apply the validation styles
+				form.classList.add('was-validated');
+				return;
+			}
+
+			// Prevent the default browser submission
+			submitEvent.preventDefault();
+
+			// Apply validation styles
+			form.classList.add('was-validated');
+
+			// Disable button during submission to prevent double-clicks
+			const submitButton = form.querySelector('button[type="submit"]');
+			submitButton.disabled = true;
+
+			// Create a form object 
+			const formData = new FormData(form);
+
+			try {
+				// Send the request to Formspree
+				const response = await fetch(formURL, {
+					method: 'POST',
+					body: formData,
+					headers: {
+						'Accept': 'application/json'
+					}
+				});
+
+				if (response.ok) {
+					// Show modal
+					successModal.show();
+
+					// Clear the form
+					form.reset();
+					form.classList.remove('was-validated');
+				} else {
+					failModal.show();
+					console.error('Form submission failed:', await response.json());
+				}
+			} catch {
+				// Handle network errors
+				failModal.show();
+				console.error('Network error:', error);
+			} finally {
+				submitButton.disabled = false;
+			}
+		});
+	};
+});

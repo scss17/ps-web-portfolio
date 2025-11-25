@@ -226,7 +226,7 @@
 		<div class="container-lg py-5">
 			<div class="section-title text-center mb-5">
 				<p class="lead subtitle">Do not Hesitate to</p>
-				<h2 id="bg-flame">Reach Ot To Me</h2>
+				<h2 id="bg-flame">Reach Out To Me</h2>
 			</div>
 
 			<div class="container d-flex flex-column align-content-center justify-content-center">
@@ -236,14 +236,24 @@
 				<!-- CONTACT FORM -->
 				<div class="form-container row my-4 justify-content-center">
 					<div class="col-lg-6">
-						<form>
+						<form id="contact-form" class="needs-validation" novalidate>
 							<label for="contact-name" class="form-label">Name</label>
 							<div class="mb-4 input-group">
 								<span class="input-group-text">
 									<i class="bi bi-person"></i>
 								</span>
-								<input type="text" class="form-control" id="contact-name"
-									placeholder="e.g. Pablo Campos">
+								<input type="text" class="form-control" id="contact-name" name="name" required
+									placeholder="Pablo Campos">
+								<div class="invalid-feedback">Please provide your name.</div>
+							</div>
+
+							<label for="company" class="form-label">Company</label>
+							<div class="mb-4 input-group">
+								<span class="input-group-text">
+									<i class="bi bi-building"></i>
+								</span>
+								<input type="company" class="form-control" id="company" name="company"
+									placeholder=" Google">
 							</div>
 
 							<label for="email" class="form-label">Email Address</label>
@@ -251,8 +261,9 @@
 								<span class="input-group-text">
 									<i class="bi bi-envelope"></i>
 								</span>
-								<input type="email" class="form-control" id="email"
-									placeholder="e.g. email@example.com">
+								<input type="email" class="form-control" id="email" name="email" required
+									placeholder=" email@example.com">
+								<div class="invalid-feedback">Please provide a valid email address.</div>
 							</div>
 
 							<label for="phone-numer" class="form-label">Phone Number</label>
@@ -260,17 +271,18 @@
 								<span class="input-group-text">
 									<i class="bi bi-phone"></i>
 								</span>
-								<input type="text" class="form-control" id="phone-numer"
-									placeholder="e.g. (250) 000-0000">
+								<input type="text" class="form-control" id="phone-numer" name="phone"
+									placeholder=" (250) 000-0000">
 							</div>
 
 							<div class="mb-4 mt-4 form-floating">
-								<textarea id="comment-area" class="form-control"></textarea>
+								<textarea id="comment-area" class="form-control" name="comments" style="height: 200px">
+								</textarea>
 								<label for="comment-area">Additional comments...</label>
 							</div>
 
 							<div class="mb-4 text-center">
-								<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+								<button type="submit" class="btn btn-primary btn-lg">Send</button>
 							</div>
 						</form>
 					</div>
@@ -278,6 +290,48 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- MODAL SUCCESS FORM -->
+	<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-bg-dark">
+				<div class="modal-header">
+					<h5 class="modal-title" id="successModalLabel">
+						Message Sent! 🚀
+					</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Thank you for reaching out, Pablo! I've received your message and will get back to you shortly.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODAL FAIL FORM -->
+	<div class="modal fade" id="failModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-bg-dark">
+				<div class="modal-header">
+					<h5 class="modal-title" id="successModalLabel">
+						Message was not Sent!
+					</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Try Again Later!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- PREVIEW RESUME SECTION-->
 	<div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="resumeSection"
