@@ -199,7 +199,7 @@ const displayTools = (tools) => {
 
 		// Create Outer Boostrap Column
 		const innerDiv = document.createElement('div');
-		innerDiv.classList.add("tool-container-inner", "col-12", "col-md-6", "my-5");
+		innerDiv.classList.add("tool-container-inner", "col-12", "col-md-4", "my-5");
 
 		// Create header container
 		const headerDiv = document.createElement('div');

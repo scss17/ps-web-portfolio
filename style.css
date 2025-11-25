@@ -10,7 +10,7 @@
 	--black-olive: #403d39;
 	--eerie-black: #252422;
 	--flame: #eb5e28;
-	--flame: #eb5e28;
+	--accent-blue: #3a5a78;
 
 	/* Media Colors */
 	--linkedin-blue: #0A66C2;
@@ -19,23 +19,6 @@
 	--medium-green: #00ab6c;
 	--upwork-green: #1A8917;
 	--superprof-red: #FF7F50;
-}
-
-/* Custom Fonts */
-.title {
-	font-family: 'Ubuntu', sans-serif;
-}
-
-.subtitle {
-	font-family: 'Roboto', sans-serif;
-}
-
-.title {
-	font-family: 'Ubuntu', sans-serif;
-}
-
-.subtitle {
-	font-family: 'Roboto', sans-serif;
 }
 
 /* Reset */
@@ -56,8 +39,28 @@ body {
 /* =====================*/
 /* === TEXT ELEMENTS ===*/
 /* ==================== */
+
+/* Custom Fonts */
+.title {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.subtitle {
+	font-family: 'Roboto', sans-serif;
+}
+
 #bg-flame {
 	color: var(--flame);
+}
+
+.card-link {
+	text-decoration: none;
+	color: var(--flame);
+	font-weight: 600;
+}
+
+a {
+	color: var(--flame)
 }
 
 /* =======================*/
@@ -102,37 +105,9 @@ body {
 	--bs-gradient: none;
 }
 
-.card-link {
-	text-decoration: none;
-	color: var(--flame);
-	font-weight: 600;
-}
-
-a {
-	color: var(--flame)
-}
-
-/* ==================== */
-/* === HERO SECTION === */
-/* ==================== */
-
-section.hero {
-	min-height: 100vh;
-
-
-	/* Background Properties */
-	background-image: url("img/hero-background01.jpg");
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-
-	color: floralwhite;
-}
-
-/* Hero Image */
-section.hero img {
-	border-radius: 35%;
-}
+/* ============================*/
+/* === SOCIAL MEDIA BUTTONS ===*/
+/* ============================*/
 
 /* Custom sizing for the social media buttons */
 .social-media-icons .btn-lg {
@@ -173,31 +148,73 @@ section.hero img {
 /* Define the brand colors */
 .social-icon-github:hover {
 	--brand-color: var(--github-black);
-	--brand-color: var(--github-black);
 }
 
 .social-icon-linkedin:hover {
-	--brand-color: var(--linkedin-blue);
 	--brand-color: var(--linkedin-blue);
 }
 
 .social-icon-kaggle:hover {
 	--brand-color: var(--kaggle-blue);
-	--brand-color: var(--kaggle-blue);
 }
 
 .social-icon-upwork:hover {
-	--brand-color: var(--upwork-green);
 	--brand-color: var(--upwork-green);
 }
 
 .social-icon-medium:hover {
 	--brand-color: var(--medium-green);
-	--brand-color: var(--medium-green);
 }
 
 .social-icon-superprof:hover {
 	--brand-color: var(--superprof-red);
+}
+
+/* ==================== */
+/* === HERO SECTION === */
+/* ==================== */
+
+section#hero {
+	min-height: 100vh;
+
+	/* Background Properties */
+	background-image: url("img/hero-background01.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	color: floralwhite;
+}
+
+/* Hero Image */
+section#hero img {
+	border-radius: 35%;
+}
+
+/* ======================*/
+/* === RESUME SECTION ===*/
+/* ======================*/
+
+.offcanvas-body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.offcanvas-body iframe {
+	flex-grow: 1;
+	min-height: 0;
+	min-height: 0;
+}
+
+.iframe-style {
+	width: 100%;
+	height: 100vh;
+
+	padding: 0;
+	margin: 0;
+
+	border: none;
 }
 
 /* ======================== */
@@ -210,18 +227,26 @@ section.about-me {
 }
 */
 
+/* About me Image */
+section#about-me img {
+	border-radius: 35%;
+}
+
+section#about-me .accordion-button:not(.collapsed) {
+	background-color: var(--accent-blue);
+	color: var(--floral-white);
+	box-shadow: none;
+}
+
+section#about-me .accordion-button:not(.collapsed)::after {
+	filter: invert(1);
+}
+
 /* ========================== */
 /* === EXPERIENCE SECTION === */
 /* ========================== */
-section.experience {
+section#experience {
 	background-color: var(--floral-white);
-}
-
-
-
-/* About me Image */
-section.about-me img {
-	border-radius: 35%;
 }
 
 /* ======================== */
@@ -264,181 +289,6 @@ section.about-me img {
 	z-index: 10;
 }
 
-/* ======================== **/
-/* === PROJECTS SECTION === */
-/* ======================== **/
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-section.projects .flip-card {
-	background-color: transparent;
-	border-radius: 1.5rem;
-	overflow: hidden;
-	perspective: 1000px;
-	aspect-ratio: 3.5 / 2.5;
-}
-
-/* This container is needed to position the front and back side */
-section.projects .flip-card-inner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: transform 0.8s ease;
-	transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-section.projects .flip-card:hover .flip-card-inner {
-	transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-section.projects .flip-card-front,
-section.projects .flip-card-back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	border-radius: 1.5rem;
-	overflow: hidden;
-	/* ensures consistent radius */
-}
-
-/* Style the front side (fallback if image is missing) */
-section.projects .flip-card-front img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	/* no distorted images */
-	display: block;
-}
-
-/* Style the back side */
-section.projects .flip-card-back {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1.5rem;
-	background: linear-gradient(90deg,
-			var(--floral-white) 0%,
-			var(--timberwolf) 50%,
-			rgba(235, 94, 40, 0.25) 100%);
-	color: var(--eerie-black);
-	transform: rotateY(180deg);
-}
-
-section.projects .flip-card-back a {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	align-items: center;
-	width: 3rem;
-	height: 3rem;
-	background: var(--floral-white);
-	border-radius: 50%;
-	margin-top: 1rem;
-}
-
-section.projects .flip-card-back a i {
-	font-size: 2rem;
-	color: var(--eerie-black);
-}
-
-section.projects {
-	background-color: var(--timberwolf);
-}
-
-section.projects .portfolio-card {
-	position: relative;
-	border-radius: 2rem;
-	overflow: hidden;
-	display: flex;
-}
-
-
-section.projects .portfolio-card img {
-	width: 100%;
-	transition: 0.5s ease;
-	transition: 0.5s ease;
-}
-
-
-section.projects .portfolio-card:hover img {
-	transform: scale(1.1);
-	cursor: pointer;
-}
-
-section.projects .portfolio-card .portfolio-layer {
-	color: var(--floral-white);
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
-	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	padding: 0 4rem;
-	transform: translateY(100%);
-	transition: 0.5s ease;
-}
-
-section.projects .portfolio-card:hover .portfolio-layer {
-	transform: translateY(0);
-}
-
-
-section.projects .portfolio-layer a {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	width: 3rem;
-	height: 3rem;
-	background: var(--floral-white);
-	border-radius: 50%;
-}
-
-section.projects .portfolio-layer a i {
-	font-size: 2rem;
-	color: var(--eerie-black);
-}
-
-/* ========================== */
-/* === CONTACT SECTION === */
-/* ========================== */
-
-/* ======================*/
-/* === RESUME SECTION ===*/
-/* ======================*/
-
-.offcanvas-body {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.offcanvas-body iframe {
-	flex-grow: 1;
-	min-height: 0;
-	min-height: 0;
-}
-
-.iframe-style {
-	width: 100%;
-	height: 100vh;
-
-	padding: 0;
-	margin: 0;
-
-	border: none;
-}
-
-
 /* ======================*/
 /* === TOOLS SECTION ===*/
 /* ======================*/
@@ -470,3 +320,151 @@ section.projects .portfolio-layer a i {
 	/* Change to a specific brand color, or just your flame color */
 	fill: var(--flame);
 }
+
+/* ======================== **/
+/* === PROJECTS SECTION === */
+/* ======================== **/
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+section#projects .flip-card {
+	background-color: transparent;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	perspective: 1000px;
+	aspect-ratio: 3.5 / 2.5;
+}
+
+/* This container is needed to position the front and back side */
+section#projects .flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s ease;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+section#projects .flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+section#projects .flip-card-front,
+section#projects .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	/* ensures consistent radius */
+}
+
+/* Style the front side (fallback if image is missing) */
+section#projects .flip-card-front img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* no distorted images */
+	display: block;
+}
+
+/* Style the back side */
+section#projects .flip-card-back {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+	background: linear-gradient(90deg,
+			var(--floral-white) 0%,
+			var(--timberwolf) 50%,
+			rgba(235, 94, 40, 0.25) 100%);
+	color: var(--eerie-black);
+	transform: rotateY(180deg);
+}
+
+section#projects .flip-card-back a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 3rem;
+	height: 3rem;
+	background: var(--floral-white);
+	border-radius: 50%;
+	margin-top: 1rem;
+}
+
+section#projects .flip-card-back a i {
+	font-size: 2rem;
+	color: var(--eerie-black);
+}
+
+section#projects {
+	background-color: var(--timberwolf);
+}
+
+section#projects .portfolio-card {
+	position: relative;
+	border-radius: 2rem;
+	overflow: hidden;
+	display: flex;
+}
+
+
+section#projects .portfolio-card img {
+	width: 100%;
+	transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+
+
+section#projects .portfolio-card:hover img {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+section#projects .portfolio-card .portfolio-layer {
+	color: var(--floral-white);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
+	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 4rem;
+	transform: translateY(100%);
+	transition: 0.5s ease;
+}
+
+section#projects .portfolio-card:hover .portfolio-layer {
+	transform: translateY(0);
+}
+
+
+section#projects .portfolio-layer a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 3rem;
+	height: 3rem;
+	background: var(--floral-white);
+	border-radius: 50%;
+}
+
+section#projects .portfolio-layer a i {
+	font-size: 2rem;
+	color: var(--eerie-black);
+}
+
+/* ========================== */
+/* === CONTACT SECTION === */
+/* ========================== */

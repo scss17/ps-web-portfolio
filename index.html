@@ -49,10 +49,17 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="#about">About</a>
+						<a class="nav-link" aria-current="page" data-bs-toggle="offcanvas" href="#resumeSection">My
+							Experience</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#experience">Experience</a>
+						<a class="nav-link" href="#about-me">My Story</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#experience">My Path</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tools">Toolkit</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#projects">Projects</a>
@@ -66,7 +73,7 @@
 	</nav>
 
 	<!-- HERO SECTION -->
-	<section class="hero d-flex align-items-center">
+	<section id="hero" class="d-flex align-items-center">
 		<div class="container-fluid container-lg py-5">
 			<div class="row justify-content-center">
 				<div class="col-11 col-md-8 col-lg-6 d-flex flex-column justify-content-center">
@@ -116,7 +123,7 @@
 	</section>
 
 	<!-- ABOUT ME SECTION-->
-	<section class="about-me">
+	<section id="about-me" class="d-flex align-items-center">
 		<div class="container-lg py-5">
 			<div class="section-title text-center mb-5">
 				<p class="lead subtitle">Beyond Technical Expertise</p>
@@ -125,13 +132,13 @@
 
 			<div class="row justify-content-around align-content-center">
 				<!-- PROFILE IMAGE-->
-				<div class="col-6 col-lg-3">
+				<div class="col-6 col-lg-3 mb-4">
 					<img src="img/profile-ima02.png" alt="Pablo Campos Casual" class="img-fluid">
 				</div>
 
 				<!-- SOFT SKILLS ACCORDION-->
 				<div
-					class="col-10 col-lg-8 text-center text-lg-start d-flex flex-column justify-content-center mt-4 mt-sm-0">
+					class="col-12 col-lg-8 text-center text-lg-start d-flex flex-column justify-content-center mt-4 mt-sm-0">
 					<p class="lead">Welcome to my page! My name is Pablo Campos, I'm 28 years old and I come from
 						Mexico. This section is
 						more than a list of skills and accomplishments; it is a journey through my interests, passions,
@@ -145,7 +152,7 @@
 	</section>
 
 	<!-- EXPERIENCE SECTION -->
-	<section class="experience">
+	<section id="experience" class="d-flex align-items-center">
 		<div class="container-lg py-5">
 			<div class="section-title text-center mb-5">
 				<p class="lead subtitle">Growth Through Learning</p>
@@ -162,53 +169,25 @@
 	</section>
 
 	<!-- TOOLS SECTION -->
-	<section class="tools">
+	<section id="tools" class="d-flex align-items-center">
 		<div class="container-fluid py-5">
 			<div class="section-title text-center mb-5">
-				<p class="lead subtitle">Take a Look at</p>
-				<h2 id="bg-flame">The Tools I Use</h2>
+				<p class="lead subtitle">Technical Toolkit</p>
+				<h2 id="bg-flame">What I Work With</h2>
 			</div>
 
 			<!-- TOOLS CONTAINER -->
-			<div class="tool-container-outer row justify-content-around">
-
-				<!--  
-				<div class="tool-container-inner col-12 col-md-6 mb-2">
-					
-					<div class="tool-container-header text-center mb-2">
-						<h4 class="subtitle">
-							<span><i class="fa-solid fa-code"></i></span>
-							Programming Languages
-						</h4>
-					</div>
-
-					
-					<div class="tools programming-languages">
-						<div class="d-flex flex-wrap gap-4 justify-content-center">
-
-							<a href="#" class="tool-logo-wrapper" data-bs-toggle="tooltip"
-								title="JavaScript - Expert: Used in multiple large-scale production projects.">
-								<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<title>JavaScript</title>
-									<path class="tool-logo-path"
-										d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
-								</svg>
-							</a>
-						</div>
-					</div>
-
-				-->
-			</div>
+			<div class="tool-container-outer row justify-content-around"></div>
 		</div>
 		</div>
 	</section>
 
 	<!-- PROJECTS SECTION -->
-	<section class="projects">
+	<section id="projects" class="d-flex align-items-center">
 		<div class="container-fluid py-5">
 			<div class="section-title text-center mb-5">
-				<p class="lead subtitle">Take a Look at</p>
-				<h2 id="bg-flame">My Resent Projects</h2>
+				<p class="lead subtitle">Featured Work</p>
+				<h2 id="bg-flame">Selected Projects</h2>
 			</div>
 
 			<!-- PROJECTS CONTAINER -->
@@ -217,11 +196,11 @@
 	</section>
 
 	<!-- CONTACT SECTION -->
-	<section class="contact">
+	<section id="contact" class="d-flex align-items-center">
 		<div class="container-lg py-5">
 			<div class="section-title text-center mb-5">
-				<p class="lead subtitle">Do not Hesitate to</p>
-				<h2 id="bg-flame">Reach Out To Me</h2>
+				<p class="lead subtitle">Stay in Touch</p>
+				<h2 id="bg-flame">Let's Work Together</h2>
 			</div>
 
 			<div class="container d-flex flex-column align-content-center justify-content-center">
