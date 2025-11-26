@@ -1,3 +1,31 @@
+/* ================= */
+/* === PRELOADER === */
+/* ================= */
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 9999;
+	transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+body.loaded #preloader {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Stop scrolling while loading */
+body {
+	overflow: hidden;
+}
+
+body.loaded {
+	overflow: auto;
+}
+
+
 /* ===================== */
 /* === INITIAL SETUP === */
 /* ===================== */
@@ -170,6 +198,21 @@ a {
 	--brand-color: var(--superprof-red);
 }
 
+/* ======================== */
+/* === CARD HOVER EFFECT ===*/
+/* ======================== */
+
+.card {
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card:hover {
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+	transform: translateY(-5px) scale(1.01);
+	z-index: 10;
+}
+
 /* ==================== */
 /* === HERO SECTION === */
 /* ==================== */
@@ -249,45 +292,7 @@ section#experience {
 	background-color: var(--floral-white);
 }
 
-/* ======================== */
-/* === CARD HOVER EFFECT ===*/
-/* ======================== */
 
-.card {
-	/* Step 1: Set up the transition for smoothness */
-	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-	/* Optional: Set a subtle default shadow to match the Bootstrap feel */
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	/* Step 1: Set up the transition for smoothness */
-	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-	/* Optional: Set a subtle default shadow to match the Bootstrap feel */
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.card:hover {
-	/* Step 2: The Lift (Box Shadow) */
-	/* Lifts the card by giving it a larger, more prominent shadow */
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-
-	/* Step 3: The Subtle Scale (Transform) */
-	/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
-	transform: translateY(-5px) scale(1.01);
-
-	/* Ensure the content is clickable and fully visible on hover */
-	z-index: 10;
-	/* Step 2: The Lift (Box Shadow) */
-	/* Lifts the card by giving it a larger, more prominent shadow */
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-
-	/* Step 3: The Subtle Scale (Transform) */
-	/* Moves the card slightly up (-5px on Y-axis) and scales it up by 1% */
-	transform: translateY(-5px) scale(1.01);
-
-	/* Ensure the content is clickable and fully visible on hover */
-	z-index: 10;
-}
 
 /* ======================*/
 /* === TOOLS SECTION ===*/
@@ -389,7 +394,6 @@ section#projects .flip-card-back a {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	align-items: center;
 	width: 3rem;
 	height: 3rem;
 	background: var(--floral-white);
@@ -413,13 +417,10 @@ section#projects .portfolio-card {
 	display: flex;
 }
 
-
 section#projects .portfolio-card img {
 	width: 100%;
 	transition: 0.5s ease;
-	transition: 0.5s ease;
 }
-
 
 section#projects .portfolio-card:hover img {
 	transform: scale(1.1);
@@ -434,7 +435,6 @@ section#projects .portfolio-card .portfolio-layer {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
-	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--flame));
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -448,7 +448,6 @@ section#projects .portfolio-card .portfolio-layer {
 section#projects .portfolio-card:hover .portfolio-layer {
 	transform: translateY(0);
 }
-
 
 section#projects .portfolio-layer a {
 	display: inline-flex;

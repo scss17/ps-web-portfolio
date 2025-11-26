@@ -180,21 +180,15 @@ const toolset = [
 	}
 ];
 
+//! Bootstrap Tooltip is not longer used
+//const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+//const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-// HTML elements
-const socialMediaContainers = document.querySelectorAll('.social-media-icons');
-const accordionSoftSkills = document.getElementById('accordionSoftSkills');
+//=========================
+//=== DISPLAY FUNCTIONS ===
+//=========================
 
-const educationContainer = document.querySelector('.education-container');
-const certificationContainer = document.querySelector('.certification-container');
-const projectsContainer = document.querySelector('.projects-container');
-const toolContainer = document.querySelector('.tool-container-outer');
-
-//=================
-//=== FUNCTIONS ===
-//=================
-
-const displayTools = (tools) => {
+const displayTools = (tools, container) => {
 	tools.forEach(tool => {
 
 		// Create Outer Boostrap Column
@@ -249,13 +243,11 @@ const displayTools = (tools) => {
 		innerDiv.appendChild(toolListDiv);
 
 		// Append the entire category column to the outer container
-		toolContainer.appendChild(innerDiv);
+		container.appendChild(innerDiv);
 	});
 };
 
-displayTools(toolset);
-
-const displayProjects = (projects) => {
+const displayProjects = (projects, container) => {
 	projects.forEach(project => {
 
 		// Outer Bootstrap column
@@ -309,7 +301,7 @@ const displayProjects = (projects) => {
 		cardContainer.appendChild(cardInner);
 		outerContainer.appendChild(cardContainer);
 
-		projectsContainer.appendChild(outerContainer);
+		container.appendChild(outerContainer);
 	});
 };
 
@@ -440,7 +432,7 @@ const displaySocialMediaButtons = (socialMedia, socialMediaContainer) => {
 	});
 };
 
-const displayAccordionContent = (softSkills) => {
+const displayAccordionContent = (softSkills, container) => {
 	// Iterate through the array and create components
 	softSkills.forEach((element, index) => {
 		// Create dynamic ids
@@ -519,97 +511,116 @@ const displayAccordionContent = (softSkills) => {
 		accItem.appendChild(accCollapseDiv);
 
 		// Append everything to the main container
-		accordionSoftSkills.appendChild(accItem);
+		container.appendChild(accItem);
 	});
 };
 
-
-if (socialMediaContainers) {
-	socialMediaContainers.forEach(container => {
-		displaySocialMediaButtons(socialMedia, container);
-	})
-	//displaySocialMediaButtons(socialMedia);
-} else {
-	console.error("Error: Could not find the container with class '.social-media-icons'");
-};
-
-displayAccordionContent(softSkills);
-education.forEach(category =>
-	renderCategory(educationContainer, category, buildEducationCard)
-);
-
-certifications.forEach(category =>
-	renderCategory(certificationContainer, category, buildCertificationCard)
-);
-
-displayProjects(projects);
-
-//! Bootstrap Tooltip is not longer used
-//const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-//const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-document.addEventListener('DOMContentLoaded', (e) => {
-	const form = document.getElementById('contact-form');
+//========================
+//=== HELPER FUNCTIONS ===
+//========================
+const setUpFormHandler = (form) => {
 	const formURL = "https://formspree.io/f/xdkvgrvy";
-
-	// Get the Bootstrap Modal instance
 	const successModal = new bootstrap.Modal(document.getElementById('successModal'));
 	const failModal = new bootstrap.Modal(document.getElementById('failModal'));
 
-	if (form) {
-		form.addEventListener('submit', async (submitEvent) => {
-
-			// Validation check
-			if (!form.checkValidity()) {
-				submitEvent.preventDefault();
-				submitEvent.stopPropagation();
-
-				// Apply the validation styles
-				form.classList.add('was-validated');
-				return;
-			}
-
-			// Prevent the default browser submission
+	form.addEventListener('submit', async (submitEvent) => {
+		// Validation check
+		if (!form.checkValidity()) {
 			submitEvent.preventDefault();
+			submitEvent.stopPropagation();
 
-			// Apply validation styles
+			// Apply the validation styles
 			form.classList.add('was-validated');
+			return;
+		}
 
-			// Disable button during submission to prevent double-clicks
-			const submitButton = form.querySelector('button[type="submit"]');
-			submitButton.disabled = true;
+		// Prevent the default browser submission
+		submitEvent.preventDefault();
 
-			// Create a form object 
-			const formData = new FormData(form);
+		// Apply validation styles
+		form.classList.add('was-validated');
 
-			try {
-				// Send the request to Formspree
-				const response = await fetch(formURL, {
-					method: 'POST',
-					body: formData,
-					headers: {
-						'Accept': 'application/json'
-					}
-				});
+		// Disable button during submission to prevent double-clicks
+		const submitButton = form.querySelector('button[type="submit"]');
+		submitButton.disabled = true;
 
-				if (response.ok) {
-					// Show modal
-					successModal.show();
+		// Create a form object 
+		const formData = new FormData(form);
 
-					// Clear the form
-					form.reset();
-					form.classList.remove('was-validated');
-				} else {
-					failModal.show();
-					console.error('Form submission failed:', await response.json());
+		try {
+			// Send the request to Formspree
+			const response = await fetch(formURL, {
+				method: 'POST',
+				body: formData,
+				headers: {
+					'Accept': 'application/json'
 				}
-			} catch {
-				// Handle network errors
+			});
+
+			if (response.ok) {
+				// Show modal
+				successModal.show();
+
+				// Clear the form
+				form.reset();
+				form.classList.remove('was-validated');
+			} else {
 				failModal.show();
-				console.error('Network error:', error);
-			} finally {
-				submitButton.disabled = false;
+				console.error('Form submission failed:', await response.json());
 			}
+		} catch {
+			// Handle network errors
+			failModal.show();
+			console.error('Network error:', error);
+		} finally {
+			submitButton.disabled = false;
+		}
+	});
+};
+
+//============
+//=== INIT ===
+//============
+
+document.addEventListener('DOMContentLoaded', (e) => {
+
+	// HTML elements
+	const socialMediaContainers = document.querySelectorAll('.social-media-icons');
+	const accordionSoftSkills = document.getElementById('accordionSoftSkills');
+	const educationContainer = document.querySelector('.education-container');
+	const certificationContainer = document.querySelector('.certification-container');
+	const projectsContainer = document.querySelector('.projects-container');
+	const toolContainer = document.querySelector('.tool-container-outer');
+	const contactForm = document.getElementById('contact-form');
+
+	if (accordionSoftSkills) displayAccordionContent(softSkills, accordionSoftSkills);
+	if (toolContainer) displayTools(toolset, toolContainer);
+	if (projectsContainer) displayProjects(projects, projectsContainer);
+
+	if (socialMediaContainers) {
+		socialMediaContainers.forEach(container => {
+			displaySocialMediaButtons(socialMedia, container);
 		});
+	}
+	if (educationContainer) {
+		education.forEach(category =>
+			renderCategory(educationContainer, category, buildEducationCard)
+		);
 	};
+
+	if (certificationContainer) {
+		certifications.forEach(category =>
+			renderCategory(certificationContainer, category, buildCertificationCard)
+		);
+	};
+
+	if (contactForm) {
+		setUpFormHandler(contactForm);
+	}
+});
+
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		document.body.classList.add('loaded');
+	}, 300);
 });
