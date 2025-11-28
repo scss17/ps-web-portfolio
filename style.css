@@ -224,7 +224,7 @@ section#hero {
 	background-image: url("img/hero-background01.jpg");
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
 
 	color: floralwhite;
 }
@@ -464,6 +464,38 @@ section#projects .portfolio-layer a i {
 	color: var(--eerie-black);
 }
 
-/* ========================== */
+/* ======================= */
 /* === CONTACT SECTION === */
-/* ========================== */
+/* ======================= */
+.optional {
+	color: #adb5bd;
+	font-size: 0.85rem;
+	font-style: italic;
+}
+
+/* ========================== **/
+/* === RESUME VIEW SECTION === */
+/* ========================== **/
+
+/* Section background style */
+section#resume-view {
+	min-height: 170vh;
+	background-color: var(--eerie-black);
+}
+
+/* Embed PDF element  */
+section#resume-view iframe {
+	height: 130vh;
+	width: 100%;
+}
+
+/* ============== */
+/* === MOBILE === */
+/* ============== */
+/*! I notice some firefox issues with background-attachment fixed on mobile devices. */
+@media (hover: none) {
+	.hero-section {
+		background-attachment: scroll;
+		/* Force to scroll normally on mobile */
+	}
+}

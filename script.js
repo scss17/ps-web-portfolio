@@ -84,7 +84,7 @@ const projects = [
 		'title': 'Web Design',
 		'description': "Created a webpage showcasing a visual art student's watercolor paintings for sale",
 		'img': 'img/project-paintingalone.jpg',
-		'link': 'https://github.com/scss17/Paintingalone-Web-Page'
+		'link': 'https://scss17.github.io/maria-campos/'
 	},
 	{
 		'title': 'SQL',
@@ -519,7 +519,7 @@ const displayAccordionContent = (softSkills, container) => {
 //=== HELPER FUNCTIONS ===
 //========================
 const setUpFormHandler = (form) => {
-	const formURL = "https://formspree.io/f/xdkvgrvy";
+	//const formURL = "https://formspree.io/f/xdkvgrvy";
 	const successModal = new bootstrap.Modal(document.getElementById('successModal'));
 	const failModal = new bootstrap.Modal(document.getElementById('failModal'));
 
@@ -592,6 +592,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	const projectsContainer = document.querySelector('.projects-container');
 	const toolContainer = document.querySelector('.tool-container-outer');
 	const contactForm = document.getElementById('contact-form');
+	const currentYearSpan = document.getElementById('copyright');
+
+	// Set current year
+	if (currentYearSpan) {
+		const currentYear = new Date().getFullYear();
+		currentYearSpan.innerHTML = `
+        Copyright © ${currentYear} -
+        <span class="fw-bold text-secondary">
+            Pablo <span id="bg-flame">Campos</span>
+        </span>`;
+	}
+
 
 	if (accordionSoftSkills) displayAccordionContent(softSkills, accordionSoftSkills);
 	if (toolContainer) displayTools(toolset, toolContainer);
