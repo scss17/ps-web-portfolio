@@ -41,12 +41,15 @@
 		</div>
 	</div>
 
+	<!-- BUTTON -->
+	<button id="toTopBtn" class="to-top-btn"><i class="bi bi-arrow-up-circle"></i></button>
+
 	<!-- NAVIGATION BAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 
 			<!-- BRAND -->
-			<a class="navbar-brand" href="#index.html">
+			<a class="navbar-brand" href="index.html">
 				<img src="img/ps-branding.png" alt="Pablo Campos Logo" height="40px"
 					class="d-inline-block align-text-center me-2">
 				<span class="fw-bold text-secondary">Pablo</span>
@@ -119,8 +122,7 @@
 
 					<!-- CALL TO ACTION BUTTONS -->
 					<div class="hero--call-to-action d-grid gap-3 d-md-flex justify-content-md-start">
-						<a class="btn btn-primary btn-lg btn-block" data-bs-toggle="offcanvas" href="#resumeSection"
-							role="button">Preview Resume
+						<a class="btn btn-primary btn-lg btn-block" href="resume.html" role="button">Preview Resume
 						</a>
 						<a class="btn btn-outline-primary btn-lg btn-block" href="#contact" role="button">Get in
 							Touch!</a>
@@ -332,42 +334,6 @@
 
 				<div class="modal-footer border-0">
 					<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- PREVIEW RESUME SECTION-->
-	<div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="resumeSection"
-		aria-labelledby="resumeSectionLabel">
-		<div class="offcanvas-header">
-			<h5 class="offcanvas-title" id="resumeSectionLabel">Resume Preview
-				<span id="bg-flame" class="ms-2">Pablo Campos</span>
-			</h5>
-			<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-				aria-label="Close"></button>
-		</div>
-		<div class="offcanvas-body p-2">
-			<iframe src="pdf/pablo_campos_resume.pdf" title="Pablo Campos Resume" frameborder="0" class="iframe-style">
-			</iframe>
-
-			<div class="d-flex justify-content-center">
-				<div class="dropdown my-3">
-					<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-						Options
-					</button>
-					<ul class="dropdown-menu dropdown-menu-dark">
-						<li>
-							<a class="dropdown-item" href="pdf/pablo_campos_resume.pdf" download>
-								<i class="fa-solid fa-download me-2"></i> Download PDF
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="resume.html" target="_blank">
-								<i class="fa-solid fa-up-right-from-square me-2"></i> View in New Tab
-							</a>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>

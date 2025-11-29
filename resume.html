@@ -46,7 +46,7 @@
 		<div class="container-fluid">
 
 			<!-- BRAND -->
-			<a class="navbar-brand" href="#index.html">
+			<a class="navbar-brand" href="index.html">
 				<img src="img/ps-branding.png" alt="Pablo Campos Logo" height="40px"
 					class="d-inline-block align-text-center me-2">
 				<span class="fw-bold text-secondary">Pablo</span>
@@ -61,6 +61,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="index.html">Home</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="index.html#about-me">My Story</a>
 					</li>
@@ -81,16 +84,96 @@
 		</div>
 	</nav>
 
-	<!-- RESUME SECTTION -->
-	<section id="resume-view">
-		<div class="container-fluid text-center">
-			<div class="row align-content-center justify-content-center">
-				<div class="col-12 col-lg-8">
-					<h1 id="bg-flame">RESUME</h1>
-					<iframe src="https://drive.google.com/file/d/1l6mlvlZxopHut4GP42R3nCMK7OFDx0ld/preview"
-						allow="autoplay"></iframe>
-				</div>
+	<!-- RESUME SECTION -->
+	<section id="resume-view" class="d-flex align-content-center">
+		<div class="container-lg py-5">
+			<div class="section-title text-center mb-5">
+				<p class="lead subtitle">Experience</p>
+				<h2 id="bg-flame">Learning in Action</h2>
 			</div>
+
+			<div class="container resume-container">
+
+				<!-- DOWNLOAD RESUME SECTION -->
+				<div class="row mb-4 justify-content-center">
+					<div
+						class="col-12 col-lg-8 d-flex justify-content-between align-items-center bg-dark p-3 rounded-3 shadow">
+						<span class="text-white fw-bold"><i class="bi bi-file-earmark-person me-2"></i>Curriculum
+							Vitae</span>
+						<a href="pdf/pablo_campos_resume.pdf" download class="btn btn-primary btn-sm">
+							<i class="bi bi-download me-2"></i>Download PDF
+						</a>
+					</div>
+				</div>
+
+				<!-- RESUME SECTION -->
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-8 px-0">
+						<div class="resume-paper p-4 p-md-5 shadow-lg">
+
+							<!-- RESUME HEADER -->
+							<div class="resume-header border-bottom pb-4 mb-4">
+								<div class="row align-items-center">
+									<div class="col-md-8">
+										<h1 class="display-5 fw-bold text-dark">Pablo <span
+												class="text-primary">Campos</span></h1>
+										<p class="lead text-secondary mb-2">Industrial Engineer & Data Specialist</p>
+										<div class="resume-contact-info small text-muted">
+											<span class="me-3"><i class="bi bi-geo-alt-fill me-1"></i>Victoria,
+												BC</span>
+											<span class="me-3"><i
+													class="bi bi-envelope-fill me-1"></i>pcampos.ortiz@gmail.com</span>
+											<span><i class="bi bi-linkedin me-1"></i>/in/ps-campos</span>
+										</div>
+									</div>
+									<div class="col-md-4 text-md-end mt-3 mt-md-0">
+										<img src="img/ps-branding.png" alt="Logo" style="height: 60px; opacity: 0.8;">
+									</div>
+								</div>
+							</div>
+
+
+							<!-- RESUME CONTENT -->
+							<div id="resume-summary" class="mb-4">
+								<h4 class="text-uppercase border-bottom border-2 border-primary pb-2 mb-2 text-dark">
+									Professional Summary</h4>
+								<p>Data-driven professional transitioning from manufacturing to IT, with hands-on
+									experience in full-
+									stack web development, data analytics, statistical modeling, data visualization, and
+									process
+									automation. Skilled in SQL, Python, R, Power BI, and statistical analysis.</p>
+							</div>
+
+							<div id="resume-experience">
+								<h4 class="text-uppercase border-bottom border-2 border-primary pb-2 mb-4 text-dark">
+									Experience</h4>
+								<div id="resume-education-target"></div>
+							</div>
+
+							<div id="resume-additional-experience">
+								<h4 class="text-uppercase border-bottom border-2 border-primary pb-2 mb-4 text-dark">
+									Additional Experience</h4>
+								<div id="resume-education-target"></div>
+							</div>
+
+							<div id="resume-skills" class="mt-5">
+								<h4 class="text-uppercase border-bottom border-2 border-primary pb-2 mb-4 text-dark">
+									Skills & Tools</h4>
+								<div id="resume-tools-target" class="row"></div>
+							</div>
+
+							<div id="resume-certs" class="mt-5">
+								<h4 class="text-uppercase border-bottom border-2 border-primary pb-2 mb-4 text-dark">
+									Certifications</h4>
+								<div id="resume-certs-target"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 	</section>
 

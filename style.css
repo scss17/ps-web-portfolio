@@ -33,6 +33,7 @@ body.loaded {
 /* Color Palette */
 :root {
 	/* Neutral Colors */
+	--boring-white: #ffff;
 	--floral-white: #fffcf2;
 	--timberwolf: #ccc5b9;
 	--black-olive: #403d39;
@@ -131,6 +132,28 @@ a {
 	--bs-btn-disabled-bg: transparent;
 	--bs-btn-disabled-border-color: var(--flame);
 	--bs-gradient: none;
+}
+
+.to-top-btn {
+	position: fixed;
+	bottom: 35px;
+	right: 25px;
+	background-color: var(--timberwolf);
+	color: var(--eerie-black);
+	border: none;
+	padding: 12px 15px;
+	font-size: 1.2rem;
+	border-radius: 25%;
+	cursor: pointer;
+	display: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.to-top-btn:hover {
+	background-color: var(--black-olive);
+	color: var(--floral-white);
 }
 
 /* ============================*/
@@ -238,26 +261,24 @@ section#hero img {
 /* === RESUME SECTION ===*/
 /* ======================*/
 
-.offcanvas-body {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+/* Section background style */
+section#resume-view {
+	background-color: var(--floral-white);
 }
 
-.offcanvas-body iframe {
-	flex-grow: 1;
-	min-height: 0;
-	min-height: 0;
+section#resume-view .resume-paper {
+	background-color: var(--boring-white);
+	border-radius: 4px;
+	min-height: 100%;
+	color: var(--eerie-black);
 }
 
-.iframe-style {
-	width: 100%;
-	height: 100vh;
+.resume-paper .text-primary {
+	color: var(--flame) !important;
+}
 
-	padding: 0;
-	margin: 0;
-
-	border: none;
+.resume-paper .border-primary {
+	border-color: var(--flame) !important;
 }
 
 /* ======================== */
@@ -292,8 +313,6 @@ section#experience {
 	background-color: var(--floral-white);
 }
 
-
-
 /* ======================*/
 /* === TOOLS SECTION ===*/
 /* ======================*/
@@ -308,17 +327,17 @@ section#experience {
 }
 
 /* SVG Path Color and Hover Effect */
-.tool-logo-path {
-	/* Default color (e.g., black-olive) */
+/* .tool-logo-path {
 	fill: var(--black-olive);
 	transition: fill 0.3s ease;
 }
+*/
 
-/* Hover effect */
+/*
 .tool-logo-wrapper:hover {
-	/* Subtle lift */
 	transform: translateY(-5px) scale(1.05);
 }
+*/
 
 /* Color change on hover */
 .tool-logo-wrapper:hover .tool-logo-path {
@@ -471,22 +490,6 @@ section#projects .portfolio-layer a i {
 	color: #adb5bd;
 	font-size: 0.85rem;
 	font-style: italic;
-}
-
-/* ========================== **/
-/* === RESUME VIEW SECTION === */
-/* ========================== **/
-
-/* Section background style */
-section#resume-view {
-	min-height: 170vh;
-	background-color: var(--eerie-black);
-}
-
-/* Embed PDF element  */
-section#resume-view iframe {
-	height: 130vh;
-	width: 100%;
 }
 
 /* ============== */

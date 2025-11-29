@@ -3,6 +3,78 @@
 //=== VARIABLES ===
 //=================
 
+const experience = [
+	{
+		'title': 'Professional Experience',
+		'items': [
+			{
+				'role': 'Full-Stack Web Dev',
+				'company': 'MyLvingCity',
+				'dates': 'May 2025 – Aug 2025',
+				'location': 'Victoria, Canada',
+				'description': [
+					"Designed and implemented database schemas and optimized queries to support data-driven features.",
+					"Contributed to UI/UX design, enabling clear and intuitive presentation of complex datasets."
+				]
+			},
+			{
+				'role': 'Operations Analyst',
+				'company': 'DC Concretos',
+				'dates': 'Feb 2021 – Jul 2022',
+				'location': 'Silao, Mexico',
+				'description': [
+					"Conducted correlation analysis to identify operational factors with the greatest impact on diesel consumption for mixer trucks.",
+					"Developed interactive Power BI dashboards to monitor vehicle performance, fuel efficiency, and operational KPIs."
+				]
+			},
+			{
+				'role': 'Quality and Process Control Engineer',
+				'company': 'Essilor International',
+				'dates': 'Aug 2018 – Aug 2019',
+				'location': 'Chihuahua, Mexico',
+				'description': [
+					"Built and deployed linear regression models to predict defect rates in prescription lenses, reducing production waste.",
+					"Designed and implemented a Statistical Process Control (SPC) system for injection molding machines using VBA and Excel, enabling real-time monitoring of process parameters."
+				]
+			}
+		]
+	},
+	{
+		'title': 'Additional Experience',
+		'items': [
+			{
+				'role': 'Freelance Online Programming Tutor',
+				'company': 'Superprof',
+				'dates': 'Jan 2020 – Present',
+				'location': 'Remote',
+				'description': [
+					"Deliver customized virtual lessons in HTML, CSS, SQL, Python, and R, adapting content to students' needs, skill levels, and learning objectives"
+				],
+
+			},
+			{
+				'role': 'Tour Guide',
+				'company': 'Experience Victoria',
+				'dates': 'May 2024 – Oct 2025',
+				'location': 'Victoria, BC',
+				'description': [
+					"Lead groups up to 45 participants, coordinate pickup and drop-off logistics, and handle unexpected challenges, ensuring tours run on schedule"
+				],
+			},
+			{
+				'role': 'Computer Science Teacher Volunteer & General Coordinator',
+				'company': 'Family Tech Student Society',
+				'dates': 'Aug 2016 – May 2019',
+				'location': 'Chihuahua, Mexico',
+				'description': [
+					"Taught introductory computer science topics, including fundamental programming concepts and basic software tools, to diverse groups of students.",
+					"Coordinated logistics for registration, scheduling, and graduation events, ensuring smooth operations for multiple cohorts."
+				],
+			}
+		]
+	}
+];
+
 const socialMedia = [
 	{ 'name': 'Linkedin', 'url': 'https://www.linkedin.com/in/ps-campos', 'iconClass': 'fab fa-linkedin' },
 	{ 'name': 'Github', 'url': 'https://github.com/scss17', 'iconClass': 'fab fa-github' },
@@ -15,8 +87,8 @@ const socialMedia = [
 const softSkills = [
 	{ 'title': 'Industrial Engineer and Data Science Enthusiast', 'links': [{ 'text': 'Check out my Notebooks', 'link': 'https://www.kaggle.com/scss17/code' }], 'text': ["I studied Industrial Engineering, where statistics captivated my interest from the start. In those earlier days, data science was a relatively unexplored topic in my country, and my toolkit was modest, primarily comprising Microsoft Excel and Minitab for daily tasks. When the pandemic hit routines, it gave me an opportunity to pause and contemplate my future pursuits.", "During this reflective period, I decided to take charge of my trajectory and start a self-taught journey into data science. Through books, online courses, and various resources, I discovered the potential within the tech field. Soon I realized that programming was an indispensable skill in our increasingly demanding and rapidly evolving professional landscape."] },
 	{ 'title': 'Bookworm and a Casual Writer', 'links': [{ 'text': 'Visit my Blog', 'link': 'https://medium.com/@pscampos.ortiz' }], 'text': ["One of my greatest joys in life is reading. From fiction to science books, I find inspiration to explore new perspectives and gain a deeper understanding of life.", "If I remember correctly, I started writing when I was 18 years old. I always considered myself introspective, so writing has helped me better assimilate reality and channel emotions hard to cope with, as well as awaken my creative side.", "I have produced some interesting results, and I even decided to start a blog with my poems and short stories. Unfortunately, I have only written in Spanish so far, but if you are curious, feel free to explore my blog."] },
-	{ 'title': 'Dedicated Volunteer Educator with a Passion for Teaching', 'links': [], 'text': ["During my time at the university, I volunteered as an educator, teaching a variety of subjects, including computer science, Excel, music, English, and French. This experience proved to be extremely rewarding, bringing a profound sense of purpose to my life. Since then, I have developed a passion for teaching and sharing my knowledge with others.", "I dedicate my spare time to being an online instructor. This not only allows me to pursue my passion for teaching but also serves as a rewarding way to generate a secondary income."] },
-	{ 'title': 'An Amateur Musician and occasional Dancer', 'links': [{ 'text': 'Enroll to my Course', 'link': '' }], 'text': ['Music has always held a special place in my heart. I have been playing the guitar for about 14 years now. During my high school days, I even had a band with my friends. We were surprisingly good, and we even performed in a local restaurant for a couple of memorable months.', "Interestingly, dancing wasn't initially my forte. Back in the day, I avoided it, believing I lacked the skill and grace. However, curiosity got the better of me, and I enrolled in Latin dance classes. To my surprise, I discovered a newfound passion, and I attended those classes for three consecutive years. Dancing is now an integral part of who I am."] },
+	{ 'title': 'Dedicated Volunteer Educator with a Passion for Teaching', 'links': [{ 'text': 'Enroll to my Course', 'link': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html' }], 'text': ["During my time at the university, I volunteered as an educator, teaching a variety of subjects, including computer science, Excel, music, English, and French. This experience proved to be extremely rewarding, bringing a profound sense of purpose to my life. Since then, I have developed a passion for teaching and sharing my knowledge with others.", "I dedicate my spare time to being an online instructor. This not only allows me to pursue my passion for teaching but also serves as a rewarding way to generate a secondary income."] },
+	{ 'title': 'An Amateur Musician and occasional Dancer', 'links': [], 'text': ['Music has always held a special place in my heart. I have been playing the guitar for about 14 years now. During my high school days, I even had a band with my friends. We were surprisingly good, and we even performed in a local restaurant for a couple of memorable months.', "Interestingly, dancing wasn't initially my forte. Back in the day, I avoided it, believing I lacked the skill and grace. However, curiosity got the better of me, and I enrolled in Latin dance classes. To my surprise, I discovered a newfound passion, and I attended those classes for three consecutive years. Dancing is now an integral part of who I am."] },
 ];
 
 const education = [
@@ -183,6 +255,79 @@ const toolset = [
 //! Bootstrap Tooltip is not longer used
 //const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 //const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const toTopBtn = document.getElementById("toTopBtn");
+
+//================================
+//=== DISPLAY FUNCTIONS RESUME ===
+//================================
+
+const renderResumeExperience = (experience, container, isProfessional = true) => {
+	if (!container) return;
+
+	const items = isProfessional ? experience.at(0).items : experience.at(1).items;
+
+	items.forEach((exp, index) => {
+		const div = document.createElement('div');
+		div.className = 'mb-4';
+		div.innerHTML = `
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h6 class="fw-bold mb-0">${exp.role}</h6>
+                <small class="text-muted">${exp.dates}</small>
+            </div>
+            <div class="small text-muted mb-1">${exp.company} - ${exp.location}</div>
+            <ul class="small ${isProfessional ? 'professional' : 'additional'}-${index}"></ul>
+        `;
+
+		exp.description.forEach(desc => {
+			const li = document.createElement('li');
+			li.textContent = desc;
+			div.querySelector(`ul.${isProfessional ? 'professional' : 'additional'}-${index}`).appendChild(li);
+		});
+
+		container.appendChild(div);
+	});
+};
+
+const renderResumeCert = (certifications, container) => {
+	if (!container) return;
+
+	const items = certifications.at(0).items;
+
+	items.forEach(cert => {
+		const div = document.createElement('div');
+		div.className = 'mb-3';
+		div.innerHTML = `
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h6 class="fw-bold mb-0">${cert.title}</h6>
+                <small class="text-muted">${cert.dates}</small>
+            </div>
+            <div class="small text-muted mb-1">${cert.issuer}</div>
+        `;
+		container.appendChild(div);
+	});
+};
+
+const renderResumeSkills = (toolsetData, container) => {
+	if (!container) return;
+
+	const allSkills = [];
+	toolsetData.forEach(cat => {
+		cat.items.forEach(tool => allSkills.push(tool.name));
+	});
+
+	// Create a tag cloud
+	const cloud = document.createElement('div');
+	cloud.classList.add('d-flex', 'flex-wrap', 'gap-2');
+
+	allSkills.forEach(skill => {
+		const badge = document.createElement('span');
+		badge.classList.add('badge', 'bg-light', 'text-dark', 'border', 'fw-normal', 'py-2', 'px-3');
+		badge.textContent = skill;
+		cloud.appendChild(badge);
+	});
+
+	container.appendChild(cloud);
+};
 
 //=========================
 //=== DISPLAY FUNCTIONS ===
@@ -497,6 +642,7 @@ const displayAccordionContent = (softSkills, container) => {
 			// Create anchor element and attributes
 			const aContent = document.createElement('a');
 			aContent.href = link.link;
+			aContent.target = '_blank';
 			aContent.textContent = link.text;
 			aContent.classList.add('text-center', 'd-block');
 
@@ -519,7 +665,7 @@ const displayAccordionContent = (softSkills, container) => {
 //=== HELPER FUNCTIONS ===
 //========================
 const setUpFormHandler = (form) => {
-	//const formURL = "https://formspree.io/f/xdkvgrvy";
+	const formURL = "https://formspree.io/f/xdkvgrvy";
 	const successModal = new bootstrap.Modal(document.getElementById('successModal'));
 	const failModal = new bootstrap.Modal(document.getElementById('failModal'));
 
@@ -584,6 +730,17 @@ const setUpFormHandler = (form) => {
 
 document.addEventListener('DOMContentLoaded', (e) => {
 
+	// Resume View Containers
+	const resumeCertsContainer = document.getElementById('resume-certs-target');
+	const resumeToolsContainer = document.getElementById('resume-tools-target');
+	const resumeProfessionalExpContainer = document.getElementById('resume-experience');
+	const resumeAdditionalExpContainer = document.getElementById('resume-additional-experience');
+
+	if (resumeCertsContainer) renderResumeCert(certifications, resumeCertsContainer);
+	if (resumeToolsContainer) renderResumeSkills(toolset, resumeToolsContainer);
+	if (resumeAdditionalExpContainer) renderResumeExperience(experience, resumeAdditionalExpContainer, false);
+	if (resumeProfessionalExpContainer) renderResumeExperience(experience, resumeProfessionalExpContainer, true);
+
 	// HTML elements
 	const socialMediaContainers = document.querySelectorAll('.social-media-icons');
 	const accordionSoftSkills = document.getElementById('accordionSoftSkills');
@@ -634,5 +791,24 @@ document.addEventListener('DOMContentLoaded', (e) => {
 window.addEventListener('load', () => {
 	setTimeout(() => {
 		document.body.classList.add('loaded');
-	}, 300);
+	}, 200);
+});
+
+//=======================
+//=== EVENT LISTENERS ===
+//=======================
+
+toTopBtn.addEventListener("click", () => {
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth"
+	});
+});
+
+window.addEventListener("scroll", () => {
+	if (window.scrollY > 300) {
+		toTopBtn.style.display = "block";
+	} else {
+		toTopBtn.style.display = "none";
+	}
 });
