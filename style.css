@@ -230,12 +230,6 @@ a {
 	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-.card:hover {
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-	transform: translateY(-5px) scale(1.01);
-	z-index: 10;
-}
-
 /* ==================== */
 /* === HERO SECTION === */
 /* ==================== */
@@ -247,7 +241,7 @@ section#hero {
 	background-image: url("img/hero-background01.jpg");
 	background-size: cover;
 	background-position: center;
-	/*background-attachment: fixed;*/
+	background-attachment: fixed;
 
 	color: floralwhite;
 }
@@ -368,8 +362,18 @@ section#projects .flip-card-inner {
 	transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/*! This feature will be removed
+/* Do an horizontal flip when you move the mouse over the flip box container 
 section#projects .flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+*/
+
+section#projects .flip-card {
+	cursor: pointer;
+}
+
+section#projects .flip-card.is-flipped .flip-card-inner {
 	transform: rotateY(180deg);
 }
 
@@ -498,7 +502,15 @@ section#projects .portfolio-layer a i {
 /*! I notice some firefox issues with background-attachment fixed on mobile devices. */
 @media (hover: none) {
 	.hero-section {
-		background-attachment: scroll;
 		/* Force to scroll normally on mobile */
+		background-attachment: scroll;
+	}
+}
+
+@media (hover: hover) {
+	.card:hover {
+		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+		transform: translateY(-5px) scale(1.01);
+		z-index: 10;
 	}
 }

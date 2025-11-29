@@ -85,10 +85,48 @@ const socialMedia = [
 ];
 
 const softSkills = [
-	{ 'title': 'Industrial Engineer and Data Science Enthusiast', 'links': [{ 'text': 'Check out my Notebooks', 'link': 'https://www.kaggle.com/scss17/code' }], 'text': ["I studied Industrial Engineering, where statistics captivated my interest from the start. In those earlier days, data science was a relatively unexplored topic in my country, and my toolkit was modest, primarily comprising Microsoft Excel and Minitab for daily tasks. When the pandemic hit routines, it gave me an opportunity to pause and contemplate my future pursuits.", "During this reflective period, I decided to take charge of my trajectory and start a self-taught journey into data science. Through books, online courses, and various resources, I discovered the potential within the tech field. Soon I realized that programming was an indispensable skill in our increasingly demanding and rapidly evolving professional landscape."] },
-	{ 'title': 'Bookworm and a Casual Writer', 'links': [{ 'text': 'Visit my Blog', 'link': 'https://medium.com/@pscampos.ortiz' }], 'text': ["One of my greatest joys in life is reading. From fiction to science books, I find inspiration to explore new perspectives and gain a deeper understanding of life.", "If I remember correctly, I started writing when I was 18 years old. I always considered myself introspective, so writing has helped me better assimilate reality and channel emotions hard to cope with, as well as awaken my creative side.", "I have produced some interesting results, and I even decided to start a blog with my poems and short stories. Unfortunately, I have only written in Spanish so far, but if you are curious, feel free to explore my blog."] },
-	{ 'title': 'Dedicated Volunteer Educator with a Passion for Teaching', 'links': [{ 'text': 'Enroll to my Course', 'link': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html' }], 'text': ["During my time at the university, I volunteered as an educator, teaching a variety of subjects, including computer science, Excel, music, English, and French. This experience proved to be extremely rewarding, bringing a profound sense of purpose to my life. Since then, I have developed a passion for teaching and sharing my knowledge with others.", "I dedicate my spare time to being an online instructor. This not only allows me to pursue my passion for teaching but also serves as a rewarding way to generate a secondary income."] },
-	{ 'title': 'An Amateur Musician and occasional Dancer', 'links': [], 'text': ['Music has always held a special place in my heart. I have been playing the guitar for about 14 years now. During my high school days, I even had a band with my friends. We were surprisingly good, and we even performed in a local restaurant for a couple of memorable months.', "Interestingly, dancing wasn't initially my forte. Back in the day, I avoided it, believing I lacked the skill and grace. However, curiosity got the better of me, and I enrolled in Latin dance classes. To my surprise, I discovered a newfound passion, and I attended those classes for three consecutive years. Dancing is now an integral part of who I am."] },
+	{
+		'title': 'Industrial Engineer with a Passion for Data Science',
+		'links': [
+			{ 'text': 'Check out my Notebooks', 'link': 'https://www.kaggle.com/scss17/code' }
+		],
+		'text': [
+			"I studied Industrial Engineering, where statistics quickly became one of my biggest interests. At that time, data science was still relatively uncommon in my country, and my work revolved mostly around Excel and Minitab.",
+			"When the pandemic changed our routines, it gave me a moment to rethink my path. I decided to take control of my career and started learning data science on my own. Through books, online courses, and personal projects, I discovered how much opportunity there is in tech—and how vital programming has become."
+		]
+	},
+	{
+		'title': 'Avid Reader & Casual Writer',
+		'links': [
+			{ 'text': 'Visit my Blog', 'link': 'https://medium.com/@pscampos.ortiz' }
+		],
+		'text': [
+			"Reading is one of my greatest joys. Whether it's fiction or science, books continually inspire me to explore new perspectives and deepen my understanding of the world.",
+			"I began writing around the age of eighteen. As an introspective person, writing helped me process experiences, express emotions, and spark my creative side.",
+			"Over the years, I've produced various poems and short stories and eventually decided to create a blog to share them. For now, everything is written in Spanish, but you're welcome to explore it if you're curious."
+		]
+	},
+	{
+		'title': 'Volunteer Educator with a Passion for Teaching',
+		'links': [
+			{ 'text': 'Enroll to my Course', 'link': 'https://www.superprof.mx/clases-virtuales-programacion-aprende-html-css-sql-python-enseno-desde-cero-adapto-tus-necesidades.html' }
+		],
+		'text': [
+			"During university, I volunteered as an instructor, teaching subjects such as computer science, Excel, music, English, and French. It was a deeply meaningful experience that shaped my sense of purpose and sparked a passion for teaching.",
+			"Today, I continue to teach online in my spare time. It allows me to share what I've learned, stay connected to education, and generate a secondary income doing something I love."
+		]
+	},
+	{
+		'title': 'A Dedicated Musician & Occasional Dancer',
+		'links': [
+			{ 'text': 'Check out the Dancing Community ', 'link': 'https://vlda.ca/' }
+		],
+		'text': [
+			"Music has always had a special place in my life. I've been playing the guitar for more than fourteen years, and during high school my friends and I formed a band. We even performed at a local restaurant for a couple of memorable months.",
+			"Dancing wasn’t my strength at first; I felt nervous and clumsy, which I think is common for many beginners. Curiosity led me to Latin dance classes, where I found a new passion, and it has since become an important part of who I am.",
+			"And most recently, I've been volunteering as the web master for the Victoria Latin Dance Association, combining my tech skills with my love for music and dance."
+		]
+	},
 ];
 
 const education = [
@@ -403,6 +441,11 @@ const displayProjects = (projects, container) => {
 		const cardContainer = document.createElement('div');
 		cardContainer.classList.add("flip-card");
 
+		//* This new feature allows the card to flip when clicked
+		cardContainer.addEventListener('click', function () {
+			this.classList.toggle('is-flipped');
+		});
+
 		const cardInner = document.createElement('div');
 		cardInner.classList.add("flip-card-inner");
 
@@ -430,6 +473,11 @@ const displayProjects = (projects, container) => {
 
 		const a = document.createElement('a');
 		a.href = project.link;
+
+		//* Prevent the link click from flipping the card
+		a.addEventListener('click', (e) => {
+			e.stopPropagation();
+		});
 
 		const i = document.createElement('i');
 		i.classList.add("bi", "bi-link");
